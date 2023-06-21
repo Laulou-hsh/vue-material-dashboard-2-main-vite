@@ -1260,7 +1260,7 @@ $navbar-brand-font-size: $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height: $font-size-base * $line-height-base + $nav-link-padding-y * 2 !default;
 $navbar-brand-height: $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2 !default;
+$navbar-brand-padding-y: math.div(($nav-link-height - $navbar-brand-height), 2) !default;
 $navbar-brand-margin-right: 1rem !default;
 
 $navbar-toggler-padding-y: 0.25rem !default;
@@ -1400,7 +1400,7 @@ $card-inner-border-radius: subtract(
   $card-border-radius,
   $card-border-width
 ) !default;
-$card-cap-padding-y: $card-spacer-y / 2 !default;
+$card-cap-padding-y: math.div($card-spacer-y, 2) !default;
 $card-cap-padding-x: $card-spacer-x !default;
 $card-cap-bg: $white !default;
 $card-cap-color: null !default;
@@ -1609,7 +1609,7 @@ $list-group-border-color: rgba($black, 0.125) !default;
 $list-group-border-width: $border-width !default;
 $list-group-border-radius: $border-radius-md !default;
 
-$list-group-item-padding-y: math.div($spacer 2) !default;
+$list-group-item-padding-y: math.div($spacer, 2) !default;
 $list-group-item-padding-x: $spacer !default;
 $list-group-item-bg-level: -9 !default;
 $list-group-item-color-level: 6 !default;

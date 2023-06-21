@@ -2,6 +2,8 @@
 // Vertical navbar + Sidenav
 //
 
+@use "sass:math";
+
 .navbar-vertical {
   .navbar-brand > img,
   .navbar-brand-img {
@@ -28,7 +30,7 @@
         border: none;
 
         .dropdown-menu {
-          margin-left: $dropdown-item-padding-x / 2;
+          margin-left: math.div($dropdown-item-padding-x, 2);
         }
       }
       .avatar {
