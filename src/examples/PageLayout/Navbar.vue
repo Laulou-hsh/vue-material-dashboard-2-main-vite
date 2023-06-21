@@ -75,15 +75,6 @@
             </router-link>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-block d-none">
-          <li class="nav-item">
-            <a
-              href="https://www.creative-tim.com/product/vue-material-dashboard-2"
-              class="btn btn-sm mb-0 me-1 bg-gradient-success"
-              >Free download</a
-            >
-          </li>
-        </ul>
       </div>
     </div>
   </nav>
