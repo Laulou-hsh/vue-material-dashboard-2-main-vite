@@ -1,4 +1,4 @@
-# Vue Material Dashboard 2 - Vite
+# Vue Material Dashboard 2 - Vite + Pinia Vision
 
 <img src="https://camo.githubusercontent.com/cbd701c1ef59145fba56872457f8ad2aa68b83b1074f0ff71e67630af614d053/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f637265617469766574696d5f6275636b65742f70726f64756374732f3539362f6f726967696e616c2f7675652d6d6174657269616c2d64617368626f6172642d322e6a7067">
 
@@ -14,11 +14,16 @@ This template has been developed for secondary use. It should help get you start
 
 Using Vite to build is faster and more convenient, and using [Pinia](https://pinia.vuejs.org/) as state management can better use the new features of Vue 3.
 
-## Recommended IDE Setup 推荐IDE设置
+## 推荐IDE设置 Recommended IDE Setup
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (并且禁用 Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Package Manager
+## 包管理器 Package Manager
 - [pnpm](https://pnpm.io/zh/) 推荐使用 pnpm 作为包管理器，它可以更快的安装依赖，更好的磁盘空间使用率。
 - [pnpm](https://pnpm.io/) is recommended for faster install speed and better disk space usage.
+
+## 待办事项 Todo List 
+
+- [ ] 改Chart.js为echarts.js
+- [ ] 优化内部使用DOM的地方，改为使用Vue组件和数据驱动
