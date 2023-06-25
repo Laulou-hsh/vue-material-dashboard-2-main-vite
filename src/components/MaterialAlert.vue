@@ -1,14 +1,10 @@
 <template>
-  <div
-    class="alert text-white"
-    role="alert"
-    :class="getClasses(color, dismissible)"
-  >
+  <div class="alert text-white" role="alert" :class="getClasses(color, dismissible)">
     <span class="alert-icon">
       <i :class="getIcon(icon)" />
     </span>
     <span class="alert-text">
-      {{ icon && "&nbsp;" }}
+      {{ icon && '&nbsp;' }}
       <slot />
     </span>
     <button
@@ -25,15 +21,15 @@
 
 <script>
 export default {
-  name: "MaterialAlert",
+  name: 'MaterialAlert',
   props: {
     color: {
       type: String,
-      default: "success",
+      default: 'success',
     },
     icon: {
       type: String,
-      default: "",
+      default: '',
     },
     dismissible: {
       type: Boolean,
@@ -42,15 +38,15 @@ export default {
   },
   methods: {
     getClasses: (color, dismissible) => {
-      let colorValue, dismissibleValue;
+      let colorValue, dismissibleValue
 
-      colorValue = color ? `alert-${color}` : null;
+      colorValue = color ? `alert-${color}` : null
 
-      dismissibleValue = dismissible ? "alert-dismissible fade show" : null;
+      dismissibleValue = dismissible ? 'alert-dismissible fade show' : null
 
-      return `${colorValue} ${dismissibleValue}`;
+      return `${colorValue} ${dismissibleValue}`
     },
     getIcon: (icon) => (icon ? icon : null),
   },
-};
+}
 </script>

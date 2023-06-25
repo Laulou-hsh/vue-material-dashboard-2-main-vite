@@ -12,12 +12,8 @@
         <div class="col-lg-4 col-md-8 col-12 mx-auto">
           <div class="card z-index-0 fadeIn3 fadeInBottom">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-              <div
-                class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1"
-              >
-                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">
-                  Sign in
-                </h4>
+              <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
+                <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
                 <div class="row mt-3">
                   <div class="col-2 text-center ms-auto">
                     <a class="btn btn-link px-3" href="javascript:;">
@@ -40,38 +36,20 @@
             <div class="card-body">
               <form role="form" class="text-start mt-3">
                 <div class="mb-3">
-                  <material-input
-                    id="email"
-                    type="email"
-                    label="Email"
-                    name="email"
-                  />
+                  <material-input id="email" type="email" label="Email" name="email" />
                 </div>
                 <div class="mb-3">
-                  <material-input
-                    id="password"
-                    type="password"
-                    label="Password"
-                    name="password"
-                  />
+                  <material-input id="password" type="password" label="Password" name="password" />
                 </div>
-                <material-switch id="rememberMe" name="rememberMe"
-                  >Remember me</material-switch
-                >
+                <material-switch id="rememberMe" name="rememberMe">Remember me</material-switch>
                 <div class="text-center">
-                  <material-button
-                    class="my-4 mb-2"
-                    variant="gradient"
-                    color="success"
-                    fullWidth
+                  <material-button class="my-4 mb-2" variant="gradient" color="success" fullWidth
                     >Sign in</material-button
                   >
                 </div>
                 <p class="mt-4 text-sm text-center">
                   Don't have an account?
-                  <router-link
-                    :to="{ name: 'SignUp' }"
-                    class="text-success text-gradient font-weight-bold"
+                  <router-link :to="{name: 'SignUp'}" class="text-success text-gradient font-weight-bold"
                     >Sign up</router-link
                   >
                 </p>
@@ -86,14 +64,8 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-12 col-md-6 my-auto">
             <div class="copyright text-center text-sm text-white text-lg-start">
-              © {{ new Date().getFullYear() }}, made with
-              <i class="fa fa-heart" aria-hidden="true"></i> by
-              <a
-                href="https://github.com/Laulou-hsh"
-                class="font-weight-bold text-white"
-                target="_blank"
-                >Laulou</a
-              >
+              © {{ new Date().getFullYear() }}, made with <i class="fa fa-heart" aria-hidden="true"></i> by
+              <a href="https://github.com/Laulou-hsh" class="font-weight-bold text-white" target="_blank">Laulou</a>
             </div>
           </div>
         </div>
@@ -103,15 +75,15 @@
 </template>
 
 <script>
-import Navbar from "@/examples/PageLayout/Navbar.vue";
-import MaterialInput from "@/components/MaterialInput.vue";
-import MaterialSwitch from "@/components/MaterialSwitch.vue";
-import MaterialButton from "@/components/MaterialButton.vue";
-import { mapActions } from 'pinia'
-import { indexStore } from '@/store/index.js'
+import Navbar from '@/examples/PageLayout/Navbar.vue'
+import MaterialInput from '@/components/MaterialInput.vue'
+import MaterialSwitch from '@/components/MaterialSwitch.vue'
+import MaterialButton from '@/components/MaterialButton.vue'
+import {mapActions} from 'pinia'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "sign-in",
+  name: 'sign-in',
   components: {
     Navbar,
     MaterialInput,
@@ -119,16 +91,16 @@ export default {
     MaterialButton,
   },
   beforeMount() {
-    this.toggleEveryDisplay();
-    this.toggleHideConfig();
+    this.toggleEveryDisplay()
+    this.toggleHideConfig()
   },
   beforeUnmount() {
-    this.toggleEveryDisplay();
-    this.toggleHideConfig();
+    this.toggleEveryDisplay()
+    this.toggleHideConfig()
   },
   methods: {
     // ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
-    ...mapActions(indexStore, ["toggleEveryDisplay", "toggleHideConfig"]),
+    ...mapActions(indexStore, ['toggleEveryDisplay', 'toggleHideConfig']),
   },
-};
+}
 </script>

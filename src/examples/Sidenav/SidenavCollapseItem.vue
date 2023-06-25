@@ -8,9 +8,7 @@
       @click="isExpanded = !isExpanded"
     >
       <span class="sidenav-mini-icon"> {{ miniIcon }} </span>
-      <span class="sidenav-normal me-3 ms-2 ps-1">
-        {{ text }} <b class="caret"></b
-      ></span>
+      <span class="sidenav-normal me-3 ms-2 ps-1"> {{ text }} <b class="caret"></b></span>
     </a>
     <div :class="isExpanded ? 'collapse show' : 'collapse'">
       <ul class="nav nav-sm flex-column">
@@ -22,7 +20,7 @@
 
 <script>
 export default {
-  name: "SidenavCollapseItem",
+  name: 'SidenavCollapseItem',
   props: {
     refer: {
       type: String,
@@ -40,7 +38,7 @@ export default {
   data() {
     return {
       isExpanded: false,
-    };
+    }
   },
-};
+}
 </script>

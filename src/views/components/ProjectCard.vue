@@ -8,33 +8,18 @@
         </div>
         <div class="col-lg-6 col-5 my-auto text-end">
           <div class="dropdown float-lg-end pe-4">
-            <a
-              class="cursor-pointer"
-              id="dropdownTable"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-ellipsis-v text-secondary" aria-hidden="true"></i>
             </a>
-            <ul
-              class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5"
-              aria-labelledby="dropdownTable"
-              style=""
-            >
+            <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable" style="">
               <li>
-                <a class="dropdown-item border-radius-md" href="javascript:;">
-                  Action
-                </a>
+                <a class="dropdown-item border-radius-md" href="javascript:;"> Action </a>
               </li>
               <li>
-                <a class="dropdown-item border-radius-md" href="javascript:;">
-                  AnotherAction
-                </a>
+                <a class="dropdown-item border-radius-md" href="javascript:;"> AnotherAction </a>
               </li>
               <li>
-                <a class="dropdown-item border-radius-md" href="javascript:;">
-                  SomethingElse
-                </a>
+                <a class="dropdown-item border-radius-md" href="javascript:;"> SomethingElse </a>
               </li>
             </ul>
           </div>
@@ -49,10 +34,7 @@
               <th
                 v-for="(heading, index) of headers"
                 :key="index"
-                :class="[
-                  index === 1 ? 'ps-2' : '',
-                  index >= 2 ? 'text-center' : '',
-                ]"
+                :class="[index === 1 ? 'ps-2' : '', index >= 2 ? 'text-center' : '']"
                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
               >
                 {{ heading }}
@@ -60,19 +42,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr
-              v-for="(
-                {
-                  logo,
-                  title,
-                  members,
-                  budget,
-                  progress: { percentage, color },
-                },
-                index
-              ) of projects"
-              :key="index"
-            >
+            <tr v-for="({logo, title, members, budget, progress: {percentage, color}}, index) of projects" :key="index">
               <td>
                 <div class="d-flex px-2 py-1">
                   <div>
@@ -106,9 +76,7 @@
                 <div class="progress-wrapper w-75 mx-auto">
                   <div class="progress-info">
                     <div class="progress-percentage">
-                      <span class="text-xs font-weight-bold"
-                        >{{ percentage }}%
-                      </span>
+                      <span class="text-xs font-weight-bold">{{ percentage }}% </span>
                     </div>
                   </div>
                   <div class="progress">
@@ -133,15 +101,15 @@
 
 <script>
 export default {
-  name: "projectCard",
+  name: 'projectCard',
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     headers: {
       type: Array,
@@ -161,5 +129,5 @@ export default {
       },
     },
   },
-};
+}
 </script>

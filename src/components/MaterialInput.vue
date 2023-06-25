@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="input-group"
-    :class="`input-group-${variant} ${getStatus(error, success)}`"
-  >
+  <div class="input-group" :class="`input-group-${variant} ${getStatus(error, success)}`">
     <label :class="variant === 'static' ? '' : 'form-label'">{{ label }}</label>
     <input
       :id="id"
@@ -19,22 +16,22 @@
 </template>
 
 <script>
-import setMaterialInput from "@/assets/js/material-input.js";
+import setMaterialInput from '@/assets/js/material-input.js'
 
 export default {
-  name: "MaterialInput",
+  name: 'MaterialInput',
   props: {
     variant: {
       type: String,
-      default: "outline",
+      default: 'outline',
     },
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     size: {
       type: String,
-      default: "default",
+      default: 'default',
     },
     success: {
       type: Boolean,
@@ -50,7 +47,7 @@ export default {
     },
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     id: {
       type: String,
@@ -58,15 +55,15 @@ export default {
     },
     value: {
       type: String,
-      default: "",
+      default: '',
     },
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     type: {
       type: String,
-      default: "text",
+      default: 'text',
     },
     isRequired: {
       type: Boolean,
@@ -74,29 +71,29 @@ export default {
     },
   },
   mounted() {
-    setMaterialInput();
+    setMaterialInput()
   },
   methods: {
     getClasses: (size) => {
-      let sizeValue;
+      let sizeValue
 
-      sizeValue = size ? `form-control-${size}` : null;
+      sizeValue = size ? `form-control-${size}` : null
 
-      return sizeValue;
+      return sizeValue
     },
     getStatus: (error, success) => {
-      let isValidValue;
+      let isValidValue
 
       if (success) {
-        isValidValue = "is-valid";
+        isValidValue = 'is-valid'
       } else if (error) {
-        isValidValue = "is-invalid";
+        isValidValue = 'is-invalid'
       } else {
-        isValidValue = null;
+        isValidValue = null
       }
 
-      return isValidValue;
+      return isValidValue
     },
   },
-};
+}
 </script>

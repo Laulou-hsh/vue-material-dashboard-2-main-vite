@@ -6,10 +6,7 @@
       <p class="text-sm" v-html="description"></p>
     </div>
     <div class="p-3 card-body">
-      <div
-        class="timeline timeline-one-side"
-        :data-timeline-axis-style="darkMode ? 'dashed' : 'dotted'"
-      >
+      <div class="timeline timeline-one-side" :data-timeline-axis-style="darkMode ? 'dashed' : 'dotted'">
         <slot />
       </div>
     </div>
@@ -18,20 +15,20 @@
 
 <script>
 export default {
-  name: "TimelineList",
+  name: 'TimelineList',
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     darkMode: {
       type: Boolean,
       default: false,
     },
   },
-};
+}
 </script>

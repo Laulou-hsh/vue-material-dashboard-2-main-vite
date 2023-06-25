@@ -1,9 +1,6 @@
 <template>
   <div class="fixed-plugin">
-    <a
-      class="px-3 py-2 fixed-plugin-button text-dark position-fixed"
-      @click="toggle"
-    >
+    <a class="px-3 py-2 fixed-plugin-button text-dark position-fixed" @click="toggle">
       <i class="material-icons py-2">settings</i>
     </a>
     <div class="shadow-lg card">
@@ -26,39 +23,13 @@
           <h6 class="mb-0">Sidebar Colors</h6>
         </div>
         <a href="#" class="switch-trigger background-color">
-          <div
-            class="my-2 badge-colors text-start"
-          >
-            <span
-              class="badge filter bg-gradient-primary"
-              data-color="primary"
-              @click="sidebarColor('primary')"
-            ></span>
-            <span
-              class="badge filter bg-gradient-dark"
-              data-color="dark"
-              @click="sidebarColor('dark')"
-            ></span>
-            <span
-              class="badge filter bg-gradient-info"
-              data-color="info"
-              @click="sidebarColor('info')"
-            ></span>
-            <span
-              class="badge filter bg-gradient-success"
-              data-color="success"
-              @click="sidebarColor('success')"
-            ></span>
-            <span
-              class="badge filter bg-gradient-warning"
-              data-color="warning"
-              @click="sidebarColor('warning')"
-            ></span>
-            <span
-              class="badge filter bg-gradient-danger"
-              data-color="danger"
-              @click="sidebarColor('danger')"
-            ></span>
+          <div class="my-2 badge-colors text-start">
+            <span class="badge filter bg-gradient-primary" data-color="primary" @click="sidebarColor('primary')"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" @click="sidebarColor('dark')"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" @click="sidebarColor('info')"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" @click="sidebarColor('success')"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" @click="sidebarColor('warning')"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" @click="sidebarColor('danger')"></span>
           </div>
         </a>
         <!-- Sidenav Type -->
@@ -92,9 +63,7 @@
             White
           </button>
         </div>
-        <p class="text-sm d-xl-none d-block mt-2">
-          You can change the sidenav type just on desktop view.
-        </p>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
 
         <!-- Navbar Fixed -->
         <hr class="horizontal dark my-3" />
@@ -139,69 +108,69 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'pinia'
-import { indexStore } from '@/store/index.js'
-import { activateDarkMode, deactivateDarkMode } from "@/assets/js/dark-mode";
+import {mapActions, mapState} from 'pinia'
+import {indexStore} from '@/store/index.js'
+import {activateDarkMode, deactivateDarkMode} from '@/assets/js/dark-mode'
 
 export default {
-  name: "configurator",
-  props: ["toggle"],
+  name: 'configurator',
+  props: ['toggle'],
   data() {
     return {
       indexStore,
-    };
+    }
   },
   methods: {
     // ...mapMutations(["navbarMinimize", "navbarFixed"]),
-    ...mapActions(indexStore, ["navbarMinimize", "navbarFixed", "setColor"]),
+    ...mapActions(indexStore, ['navbarMinimize', 'navbarFixed', 'setColor']),
 
-    sidebarColor(color = "success") {
-      document.querySelector("#sidenav-main").setAttribute("data-color", color);
-      this.setColor(color);
+    sidebarColor(color = 'success') {
+      document.querySelector('#sidenav-main').setAttribute('data-color', color)
+      this.setColor(color)
     },
 
     sidebar(type) {
-      indexStore.sidebarType = type;
+      indexStore.sidebarType = type
     },
 
     setNavbarFixed() {
-      if (this.$route.name !== "Profile") {
-        indexStore.isNavFixed = indexStore.isNavFixed;
+      if (this.$route.name !== 'Profile') {
+        indexStore.isNavFixed = !indexStore.isNavFixed
       }
     },
 
     darkMode() {
       if (indexStore.isDarkMode) {
-        indexStore.isDarkMode = false;
-        deactivateDarkMode();
-        return;
+        indexStore.isDarkMode = false
+        deactivateDarkMode()
+        return
       } else {
-        indexStore.isDarkMode = true;
-        activateDarkMode();
+        indexStore.isDarkMode = true
+        activateDarkMode()
       }
     },
 
     sidenavTypeOnResize() {
-      let transparent = document.querySelector("#btn-transparent");
-      let white = document.querySelector("#btn-white");
+      let transparent = document.querySelector('#btn-transparent')
+      let white = document.querySelector('#btn-white')
       if (window.innerWidth < 1200) {
-        transparent.classList.add("disabled");
-        white.classList.add("disabled");
+        transparent.classList.add('disabled')
+        white.classList.add('disabled')
       } else {
-        transparent.classList.remove("disabled");
-        white.classList.remove("disabled");
+        transparent.classList.remove('disabled')
+        white.classList.remove('disabled')
       }
     },
   },
   computed: {
-    ...mapState(indexStore, ["sidebarType"]),
+    ...mapState(indexStore, ['sidebarType']),
     sidenavResponsive() {
-      return this.sidenavTypeOnResize;
+      return this.sidenavTypeOnResize
     },
   },
   beforeMount() {
-    window.addEventListener("resize", this.sidenavTypeOnResize);
-    window.addEventListener("load", this.sidenavTypeOnResize);
+    window.addEventListener('resize', this.sidenavTypeOnResize)
+    window.addEventListener('load', this.sidenavTypeOnResize)
   },
-};
+}
 </script>

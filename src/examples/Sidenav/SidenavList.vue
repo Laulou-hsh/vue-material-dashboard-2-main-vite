@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="w-auto h-auto collapse navbar-collapse max-height-vh-100 h-100"
-    id="sidenav-collapse-main"
-  >
+  <div class="w-auto h-auto collapse navbar-collapse max-height-vh-100 h-100" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
         <sidenav-collapse
@@ -18,26 +15,14 @@
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="tables"
-          navText="Tables"
-        >
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="tables" navText="Tables">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">table_view</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="billing"
-          navText="Billing"
-        >
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="billing" navText="Billing">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">receipt_long</i>
           </template>
@@ -57,46 +42,24 @@
         </sidenav-collapse>
       </li>
       <li class="mt-3 nav-item">
-        <h6
-          class="text-xs ps-4 text-uppercase font-weight-bolder text-white ms-2"
-        >
-          ACCOUNT PAGES
-        </h6>
+        <h6 class="text-xs ps-4 text-uppercase font-weight-bolder text-white ms-2">ACCOUNT PAGES</h6>
       </li>
       <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="profile"
-          navText="Profile"
-        >
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="profile" navText="Profile">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">person</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="sign-in"
-          navText="SignIn"
-        >
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-in" navText="SignIn">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">login</i>
           </template>
         </sidenav-collapse>
       </li>
       <li class="nav-item">
-        <sidenav-collapse
-          url="#"
-          :aria-controls="''"
-          v-bind:collapse="false"
-          collapseRef="sign-up"
-          navText="SignUp"
-        >
+        <sidenav-collapse url="#" :aria-controls="''" v-bind:collapse="false" collapseRef="sign-up" navText="SignUp">
           <template v-slot:icon>
             <i class="material-icons-round opacity-10 fs-5">assignment</i>
           </template>
@@ -106,24 +69,24 @@
   </div>
 </template>
 <script>
-import SidenavCollapse from "./SidenavCollapse.vue";
-import { indexStore } from '@/store/index.js'
+import SidenavCollapse from './SidenavCollapse.vue'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "SidenavList",
+  name: 'SidenavList',
   props: {
-    cardBg: String
+    cardBg: String,
   },
   data() {
     return {
-      title: "Soft UI Dashboard PRO",
-      controls: "dashboardsExamples",
-      isActive: "active",
-      indexStore
-    };
+      title: 'Soft UI Dashboard PRO',
+      controls: 'dashboardsExamples',
+      isActive: 'active',
+      indexStore,
+    }
   },
   components: {
-    SidenavCollapse
-  }
-};
+    SidenavCollapse,
+  },
+}
 </script>

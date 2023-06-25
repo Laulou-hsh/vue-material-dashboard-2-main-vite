@@ -12,11 +12,7 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            <img
-              src="@/assets/img/bruce-mars.jpg"
-              alt="profile_image"
-              class="shadow-sm w-100 border-radius-lg"
-            />
+            <img src="@/assets/img/bruce-mars.jpg" alt="profile_image" class="shadow-sm w-100 border-radius-lg" />
           </div>
         </div>
         <div class="col-auto my-auto">
@@ -25,14 +21,9 @@
             <p class="mb-0 font-weight-normal text-sm">CEO / Co-Founder</p>
           </div>
         </div>
-        <div
-          class="mx-auto mt-3 col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0"
-        >
+        <div class="mx-auto mt-3 col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0">
           <div class="nav-wrapper position-relative end-0">
-            <ul
-              class="p-1 bg-transparent nav nav-pills nav-fill"
-              role="tablist"
-            >
+            <ul class="p-1 bg-transparent nav nav-pills nav-fill" role="tablist">
               <li class="nav-item">
                 <a
                   class="px-0 py-1 mb-0 nav-link active"
@@ -50,17 +41,8 @@
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <g
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <g
-                        transform="translate(-2319.000000, -291.000000)"
-                        fill="#FFFFFF"
-                        fill-rule="nonzero"
-                      >
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-2319.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
                         <g transform="translate(1716.000000, 291.000000)">
                           <g transform="translate(603.000000, 0.000000)">
                             <path
@@ -103,17 +85,8 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <title>document</title>
-                    <g
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <g
-                        transform="translate(-1870.000000, -591.000000)"
-                        fill="#FFFFFF"
-                        fill-rule="nonzero"
-                      >
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
                         <g transform="translate(1716.000000, 291.000000)">
                           <g transform="translate(154.000000, 300.000000)">
                             <path
@@ -151,17 +124,8 @@
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
                     <title>settings</title>
-                    <g
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <g
-                        transform="translate(-2020.000000, -442.000000)"
-                        fill="#FFFFFF"
-                        fill-rule="nonzero"
-                      >
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
                         <g transform="translate(1716.000000, 291.000000)">
                           <g transform="translate(304.000000, 151.000000)">
                             <polygon
@@ -198,9 +162,7 @@
                 <h6 class="mb-0">Platform Settings</h6>
               </div>
               <div class="p-3 card-body">
-                <h6 class="text-xs text-uppercase text-body font-weight-bolder">
-                  Account
-                </h6>
+                <h6 class="text-xs text-uppercase text-body font-weight-bolder">Account</h6>
                 <ul class="list-group">
                   <li class="px-0 border-0 list-group-item">
                     <material-switch
@@ -233,11 +195,7 @@
                     >
                   </li>
                 </ul>
-                <h6
-                  class="mt-4 text-xs text-uppercase text-body font-weight-bolder"
-                >
-                  Application
-                </h6>
+                <h6 class="mt-4 text-xs text-uppercase text-body font-weight-bolder">Application</h6>
                 <ul class="list-group">
                   <li class="px-0 border-0 list-group-item">
                     <material-switch
@@ -310,115 +268,45 @@
               </div>
               <div class="p-3 card-body">
                 <ul class="list-group">
-                  <li
-                    class="px-0 mb-2 border-0 list-group-item d-flex align-items-center"
-                  >
-                    <material-avatar
-                      class="me-3"
-                      :img="sophie"
-                      alt="kal"
-                      border-radius="lg"
-                      shadow="regular"
-                    />
-                    <div
-                      class="d-flex align-items-start flex-column justify-content-center"
-                    >
+                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
+                    <material-avatar class="me-3" :img="sophie" alt="kal" border-radius="lg" shadow="regular" />
+                    <div class="d-flex align-items-start flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">Sophie B.</h6>
                       <p class="mb-0 text-xs">Hi! I need more information..</p>
                     </div>
-                    <a
-                      class="mb-0 btn btn-link pe-3 ps-0 ms-auto"
-                      href="javascript:;"
-                      >Reply</a
-                    >
+                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
                   </li>
-                  <li
-                    class="px-0 mb-2 border-0 list-group-item d-flex align-items-center"
-                  >
-                    <material-avatar
-                      class="me-3"
-                      :img="marie"
-                      alt="kal"
-                      border-radius="lg"
-                      shadow="regular"
-                    />
-                    <div
-                      class="d-flex align-items-start flex-column justify-content-center"
-                    >
+                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
+                    <material-avatar class="me-3" :img="marie" alt="kal" border-radius="lg" shadow="regular" />
+                    <div class="d-flex align-items-start flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">Anne Marie</h6>
                       <p class="mb-0 text-xs">Awesome work, can you..</p>
                     </div>
-                    <a
-                      class="mb-0 btn btn-link pe-3 ps-0 ms-auto"
-                      href="javascript:;"
-                      >Reply</a
-                    >
+                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
                   </li>
-                  <li
-                    class="px-0 mb-2 border-0 list-group-item d-flex align-items-center"
-                  >
-                    <material-avatar
-                      class="me-3"
-                      :img="ivana"
-                      alt="kal"
-                      border-radius="lg"
-                      shadow="regular"
-                    />
-                    <div
-                      class="d-flex align-items-start flex-column justify-content-center"
-                    >
+                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
+                    <material-avatar class="me-3" :img="ivana" alt="kal" border-radius="lg" shadow="regular" />
+                    <div class="d-flex align-items-start flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">Ivanna</h6>
                       <p class="mb-0 text-xs">About files I can..</p>
                     </div>
-                    <a
-                      class="mb-0 btn btn-link pe-3 ps-0 ms-auto"
-                      href="javascript:;"
-                      >Reply</a
-                    >
+                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
                   </li>
-                  <li
-                    class="px-0 mb-2 border-0 list-group-item d-flex align-items-center"
-                  >
-                    <material-avatar
-                      class="me-3"
-                      :img="peterson"
-                      alt="kal"
-                      border-radius="lg"
-                      shadow="regular"
-                    />
-                    <div
-                      class="d-flex align-items-start flex-column justify-content-center"
-                    >
+                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
+                    <material-avatar class="me-3" :img="peterson" alt="kal" border-radius="lg" shadow="regular" />
+                    <div class="d-flex align-items-start flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">Peterson</h6>
                       <p class="mb-0 text-xs">Have a great afternoon..</p>
                     </div>
-                    <a
-                      class="mb-0 btn btn-link pe-3 ps-0 ms-auto"
-                      href="javascript:;"
-                      >Reply</a
-                    >
+                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
                   </li>
-                  <li
-                    class="px-0 border-0 list-group-item d-flex align-items-center"
-                  >
-                    <material-avatar
-                      class="me-3"
-                      :img="nick"
-                      alt="kal"
-                      border-radius="lg"
-                      shadow="regular"
-                    />
-                    <div
-                      class="d-flex align-items-start flex-column justify-content-center"
-                    >
+                  <li class="px-0 border-0 list-group-item d-flex align-items-center">
+                    <material-avatar class="me-3" :img="nick" alt="kal" border-radius="lg" shadow="regular" />
+                    <div class="d-flex align-items-start flex-column justify-content-center">
                       <h6 class="mb-0 text-sm">Nick Daniel</h6>
                       <p class="mb-0 text-xs">Hi! I need more information..</p>
                     </div>
-                    <a
-                      class="mb-0 btn btn-link pe-3 ps-0 ms-auto"
-                      href="javascript:;"
-                      >Reply</a
-                    >
+                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
                   </li>
                 </ul>
               </div>
@@ -559,30 +447,30 @@
 </template>
 
 <script>
-import ProfileInfoCard from "./components/ProfileInfoCard.vue";
-import DefaultProjectCard from "./components/DefaultProjectCard.vue";
-import MaterialSwitch from "@/components/MaterialSwitch.vue";
-import MaterialAvatar from "@/components/MaterialAvatar.vue";
-import sophie from "@/assets/img/kal-visuals-square.jpg";
-import marie from "@/assets/img/marie.jpg";
-import ivana from "@/assets/img/ivana-square.jpg";
-import peterson from "@/assets/img/team-4.jpg";
-import nick from "@/assets/img/team-3.jpg";
-import img1 from "@/assets/img/home-decor-1.jpg";
-import img2 from "@/assets/img/home-decor-2.jpg";
-import img3 from "@/assets/img/home-decor-3.jpg";
-import team1 from "@/assets/img/team-1.jpg";
-import team2 from "@/assets/img/team-2.jpg";
-import team3 from "@/assets/img/team-3.jpg";
-import team4 from "@/assets/img/team-4.jpg";
+import ProfileInfoCard from './components/ProfileInfoCard.vue'
+import DefaultProjectCard from './components/DefaultProjectCard.vue'
+import MaterialSwitch from '@/components/MaterialSwitch.vue'
+import MaterialAvatar from '@/components/MaterialAvatar.vue'
+import sophie from '@/assets/img/kal-visuals-square.jpg'
+import marie from '@/assets/img/marie.jpg'
+import ivana from '@/assets/img/ivana-square.jpg'
+import peterson from '@/assets/img/team-4.jpg'
+import nick from '@/assets/img/team-3.jpg'
+import img1 from '@/assets/img/home-decor-1.jpg'
+import img2 from '@/assets/img/home-decor-2.jpg'
+import img3 from '@/assets/img/home-decor-3.jpg'
+import team1 from '@/assets/img/team-1.jpg'
+import team2 from '@/assets/img/team-2.jpg'
+import team3 from '@/assets/img/team-3.jpg'
+import team4 from '@/assets/img/team-4.jpg'
 
-import setNavPills from "@/assets/js/nav-pills.js";
-import setTooltip from "@/assets/js/tooltip.js";
+import setNavPills from '@/assets/js/nav-pills.js'
+import setTooltip from '@/assets/js/tooltip.js'
 
-import { indexStore } from '@/store/index.js'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "profile-overview",
+  name: 'profile-overview',
   data() {
     return {
       showMenu: false,
@@ -599,7 +487,7 @@ export default {
       img2,
       img3,
       indexStore,
-    };
+    }
   },
   components: {
     ProfileInfoCard,
@@ -609,12 +497,12 @@ export default {
   },
 
   mounted() {
-    indexStore.isAbsolute = true;
-    setNavPills();
-    setTooltip();
+    indexStore.isAbsolute = true
+    setNavPills()
+    setTooltip()
   },
   beforeUnmount() {
-    indexStore.isAbsolute = false;
+    indexStore.isAbsolute = false
   },
-};
+}
 </script>

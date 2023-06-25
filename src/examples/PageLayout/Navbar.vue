@@ -31,11 +31,7 @@
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <router-link
-              class="nav-link d-flex align-items-center me-2 active"
-              aria-current="page"
-              to="/dashboard"
-            >
+            <router-link class="nav-link d-flex align-items-center me-2 active" aria-current="page" to="/dashboard">
               <i
                 class="fa fa-chart-pie opacity-6 me-1"
                 aria-hidden="true"
@@ -46,11 +42,7 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link me-2" to="/profile">
-              <i
-                class="fa fa-user opacity-6 me-1"
-                aria-hidden="true"
-                :class="isBlur ? 'text-dark' : 'text-white'"
-              ></i>
+              <i class="fa fa-user opacity-6 me-1" aria-hidden="true" :class="isBlur ? 'text-dark' : 'text-white'"></i>
               Profile
             </router-link>
           </li>
@@ -66,11 +58,7 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link me-2" to="/sign-in">
-              <i
-                class="fas fa-key opacity-6 me-1"
-                aria-hidden="true"
-                :class="isBlur ? 'text-dark' : 'text-white'"
-              ></i>
+              <i class="fas fa-key opacity-6 me-1" aria-hidden="true" :class="isBlur ? 'text-dark' : 'text-white'"></i>
               Sign In
             </router-link>
           </li>
@@ -82,16 +70,16 @@
 </template>
 
 <script>
-import downArrWhite from "@/assets/img/down-arrow-white.svg";
-import downArrBlack from "@/assets/img/down-arrow-dark.svg";
+import downArrWhite from '@/assets/img/down-arrow-white.svg'
+import downArrBlack from '@/assets/img/down-arrow-dark.svg'
 
 export default {
-  name: "navbar",
+  name: 'navbar',
   data() {
     return {
       downArrWhite,
       downArrBlack,
-    };
+    }
   },
   props: {
     btnBackground: String,
@@ -104,9 +92,9 @@ export default {
   computed: {
     darkModes() {
       return {
-        "text-dark": this.darkMode,
-      };
+        'text-dark': this.darkMode,
+      }
     },
   },
-};
+}
 </script>

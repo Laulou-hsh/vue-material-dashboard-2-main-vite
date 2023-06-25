@@ -9,52 +9,48 @@
     v-bind="$attrs"
     @click="isExpanded = !isExpanded"
   >
-    <div
-      class="text-center d-flex align-items-center justify-content-center me-2"
-    >
+    <div class="text-center d-flex align-items-center justify-content-center me-2">
       <slot name="icon"></slot>
     </div>
-    <span class="nav-link-text ms-1">{{
-      navText
-    }}</span>
+    <span class="nav-link-text ms-1">{{ navText }}</span>
   </router-link>
   <div :class="isExpanded ? 'collapse show' : 'collapse'">
     <slot name="list"></slot>
   </div>
 </template>
 <script>
-import { mapState } from 'pinia'
-import { indexStore } from '@/store/index.js'
+import {mapState} from 'pinia'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "SidenavCollapse",
+  name: 'SidenavCollapse',
   props: {
     collapseRef: {
       type: String,
-      required: true
+      required: true,
     },
     navText: {
       type: String,
-      required: true
+      required: true,
     },
     collapse: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
-      isExpanded: false
-    };
+      isExpanded: false,
+    }
   },
   methods: {
     getRoute() {
-      const routeArr = this.$route.path.split("/");
-      return routeArr[1];
-    }
+      const routeArr = this.$route.path.split('/')
+      return routeArr[1]
+    },
   },
   computed: {
-    ...mapState(indexStore, ["color"])
-  }
-};
+    ...mapState(indexStore, ['color']),
+  },
+}
 </script>

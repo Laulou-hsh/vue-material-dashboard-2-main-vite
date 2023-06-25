@@ -1,12 +1,7 @@
 <template>
   <div class="card z-index-2">
-    <div
-      class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent"
-    >
-      <div
-        class="border-radius-lg py-3 pe-1"
-        :class="`bg-gradient-${color} shadow-${color}`"
-      >
+    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+      <div class="border-radius-lg py-3 pe-1" :class="`bg-gradient-${color} shadow-${color}`">
         <slot />
       </div>
     </div>
@@ -25,24 +20,24 @@
 
 <script>
 export default {
-  name: "ChartHolderCard",
+  name: 'ChartHolderCard',
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     subtitle: {
       type: String,
-      default: "",
+      default: '',
     },
     update: {
       type: String,
-      default: "",
+      default: '',
     },
     color: {
       type: String,
-      default: "primary",
+      default: 'primary',
     },
   },
-};
+}
 </script>

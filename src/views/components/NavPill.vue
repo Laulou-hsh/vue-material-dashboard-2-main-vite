@@ -46,12 +46,12 @@
 </template>
 
 <script>
-import setNavPills from "@/assets/js/nav-pills.js";
+import setNavPills from '@/assets/js/nav-pills.js'
 
 export default {
-  name: "nav-pill",
+  name: 'nav-pill',
   mounted() {
-    setNavPills();
+    setNavPills()
   },
-};
+}
 </script>

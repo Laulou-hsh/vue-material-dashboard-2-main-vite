@@ -5,12 +5,7 @@
         class="icon icon-lg icon-shape shadow text-center border-radius-xl mt-n4 position-absolute"
         :class="`bg-gradient-${icon.background} shadow-${icon.background}`"
       >
-        <i
-          class="material-icons opacity-10"
-          :class="icon.color"
-          aria-hidden="true"
-          >{{ icon.name }}</i
-        >
+        <i class="material-icons opacity-10" :class="icon.color" aria-hidden="true">{{ icon.name }}</i>
       </div>
       <div class="pt-1 text-end">
         <p class="text-sm mb-0 text-capitalize">{{ title.text }}</p>
@@ -27,11 +22,11 @@
 
 <script>
 export default {
-  name: "MiniStatisticsCard",
+  name: 'MiniStatisticsCard',
   data() {
     return {
-      reverseDirection: "flex-row-reverse justify-content-between",
-    };
+      reverseDirection: 'flex-row-reverse justify-content-between',
+    }
   },
   props: {
     title: {
@@ -42,7 +37,7 @@ export default {
     },
     detail: {
       type: String,
-      default: "",
+      default: '',
     },
     icon: {
       type: Object,
@@ -51,8 +46,8 @@ export default {
       color: String,
       background: String,
       default: () => ({
-        color: "text-white",
-        background: "success",
+        color: 'text-white',
+        background: 'success',
       }),
     },
     directionReverse: {
@@ -60,5 +55,5 @@ export default {
       default: false,
     },
   },
-};
+}
 </script>

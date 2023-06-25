@@ -3,11 +3,7 @@
     <div class="card card-blog card-plain">
       <div class="card-header p-0 mt-n4 mx-3">
         <a class="shadow-xl d-block border-radius-xl">
-          <img
-            :src="image"
-            alt="img-blur-shadow"
-            class="shadow img-fluid border-radius-xl"
-          />
+          <img :src="image" alt="img-blur-shadow" class="shadow img-fluid border-radius-xl" />
         </a>
       </div>
       <div class="p-3 card-body">
@@ -19,16 +15,12 @@
           {{ description }}
         </p>
         <div class="d-flex align-items-center justify-content-between">
-          <button
-            type="button"
-            class="mb-0 btn btn-sm"
-            :class="`btn-outline-${action.color}`"
-          >
+          <button type="button" class="mb-0 btn btn-sm" :class="`btn-outline-${action.color}`">
             {{ action.label }}
           </button>
           <div class="mt-2 avatar-group">
             <a
-              v-for="({ image: authorImage, name }, index) of authors"
+              v-for="({image: authorImage, name}, index) of authors"
               :key="index"
               href="javascript:;"
               class="avatar avatar-xs rounded-circle"
@@ -47,23 +39,23 @@
 
 <script>
 export default {
-  name: "DefaultProjectCard",
+  name: 'DefaultProjectCard',
   props: {
     image: {
       type: String,
-      default: "",
+      default: '',
     },
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     title: {
       type: String,
-      default: "Default Project Card",
+      default: 'Default Project Card',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     action: {
       type: Object,
@@ -79,5 +71,5 @@ export default {
       default: () => [],
     },
   },
-};
+}
 </script>

@@ -12,18 +12,11 @@
       ></i>
       <a class="m-0 navbar-brand" href="/">
         <img
-          :src="
-            sidebarType === 'bg-white' ||
-            (sidebarType === 'bg-transparent' && !isDarkMode)
-              ? logoDark
-              : logo
-          "
+          :src="sidebarType === 'bg-white' || (sidebarType === 'bg-transparent' && !isDarkMode) ? logoDark : logo"
           class="navbar-brand-img h-100"
           alt="main_logo"
         />
-        <span class="ms-2 font-weight-bold text-white"
-          >Material Dashboard 2</span
-        >
+        <span class="ms-2 font-weight-bold text-white">Material Dashboard 2</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2" />
@@ -31,14 +24,14 @@
   </aside>
 </template>
 <script>
-import SidenavList from "./SidenavList.vue";
-import logo from "@/assets/img/logo-ct.png";
-import logoDark from "@/assets/img/logo-ct-dark.png";
-import { mapState } from 'pinia'
-import { indexStore } from '@/store/index.js'
+import SidenavList from './SidenavList.vue'
+import logo from '@/assets/img/logo-ct.png'
+import logoDark from '@/assets/img/logo-ct-dark.png'
+import {mapState} from 'pinia'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "index",
+  name: 'index',
   components: {
     SidenavList,
   },
@@ -46,10 +39,10 @@ export default {
     return {
       logo,
       logoDark,
-    };
+    }
   },
   computed: {
-    ...mapState(indexStore, ["sidebarType", "isDarkMode"]),
+    ...mapState(indexStore, ['sidebarType', 'isDarkMode']),
   },
-};
+}
 </script>

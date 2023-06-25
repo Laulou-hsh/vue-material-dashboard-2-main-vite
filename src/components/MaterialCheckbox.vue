@@ -1,12 +1,6 @@
 <template>
   <div class="form-check p-0">
-    <input
-      :id="id"
-      class="form-check-input"
-      type="checkbox"
-      :name="name"
-      :checked="checked"
-    />
+    <input :id="id" class="form-check-input" type="checkbox" :name="name" :checked="checked" />
     <label :for="id" class="custom-control-label">
       <slot />
     </label>
@@ -15,17 +9,17 @@
 
 <script>
 export default {
-  name: "MaterialCheckbox",
+  name: 'MaterialCheckbox',
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     id: {
       type: String,
-      default: "",
+      default: '',
     },
     checked: Boolean,
   },
-};
+}
 </script>

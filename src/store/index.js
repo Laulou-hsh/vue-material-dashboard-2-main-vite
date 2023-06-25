@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import {defineStore} from 'pinia'
 
 export const indexStore = defineStore({
   id: 'index',
@@ -16,8 +16,7 @@ export const indexStore = defineStore({
     showFooter: true,
     showMain: true,
     isDarkMode: false,
-    navbarFixed:
-      'position-sticky blur shadow-blur left-auto top-1 z-index-sticky px-0 mx-4',
+    navbarFixed: 'position-sticky blur shadow-blur left-auto top-1 z-index-sticky px-0 mx-4',
     absolute: 'position-absolute px-4 mx-0 w-100 z-index-2',
     isTransparent: 'bg-transparent',
   }),
@@ -53,8 +52,8 @@ export const indexStore = defineStore({
     },
     setColor(payload) {
       this.color = payload
-    }
-  }
+    },
+  },
 })
 
 export default indexStore

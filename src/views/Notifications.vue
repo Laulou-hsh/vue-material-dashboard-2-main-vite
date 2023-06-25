@@ -9,66 +9,50 @@
           <div class="card-body p-3 pb-0">
             <material-alert class="font-weight-light" color="primary" dismissible>
               <span class="text-sm"
-                >A simple primary alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple primary alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="secondary" dismissible>
               <span class="text-sm"
-                >A simple secondary alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple secondary alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="success" dismissible>
               <span class="text-sm"
-                >A simple success alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple success alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="danger" dismissible>
               <span class="text-sm"
-                >A simple danger alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple danger alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="warning" dismissible>
               <span class="text-sm"
-                >A simple warning alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple warning alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="info" dismissible>
               <span class="text-sm"
-                >A simple info alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple info alert with <a href="javascript:;" class="alert-link text-white">an example link</a>. Give
+                it a click if you like.</span
               >
             </material-alert>
             <material-alert class="font-weight-light" color="light" dismissible>
               <span class="text-sm"
-                >A simple light alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple light alert with <a href="javascript:;" class="alert-link text-white">an example link</a>.
+                Give it a click if you like.</span
               >
             </material-alert>
             <material-alert color="dark" dismissible>
               <span class="text-sm"
-                >A simple dark alert with
-                <a href="javascript:;" class="alert-link text-white"
-                  >an example link</a
-                >. Give it a click if you like.</span
+                >A simple dark alert with <a href="javascript:;" class="alert-link text-white">an example link</a>. Give
+                it a click if you like.</span
               >
             </material-alert>
           </div>
@@ -77,8 +61,7 @@
           <div class="card-header p-3">
             <h5 class="mb-0">Notifications</h5>
             <p class="text-sm mb-0">
-              Notifications on this page use Toasts from Bootstrap. Read more
-              details
+              Notifications on this page use Toasts from Bootstrap. Read more details
               <a
                 href="https://getbootstrap.com/docs/5.0/components/toasts/"
                 target="
@@ -140,7 +123,7 @@
         title="Material Dashboard"
         date="11 mins ago"
         description="Hello, world! This is a notification message."
-        :icon="{ component: 'done', color: 'white' }"
+        :icon="{component: 'done', color: 'white'}"
         color="success"
         :close-handler="closeSnackbar"
       />
@@ -149,7 +132,7 @@
         title="Material Dashboard"
         date="11 mins ago"
         description="Hello, world! This is a notification message."
-        :icon="{ component: 'notifications', color: 'white' }"
+        :icon="{component: 'notifications', color: 'white'}"
         color="info"
         :close-handler="closeSnackbar"
       />
@@ -158,7 +141,7 @@
         title="Material Dashboard"
         date="11 mins ago"
         description="Hello, world! This is a notification message."
-        :icon="{ component: 'travel_explore', color: 'white' }"
+        :icon="{component: 'travel_explore', color: 'white'}"
         color="warning"
         :close-handler="closeSnackbar"
       />
@@ -167,7 +150,7 @@
         title="Material Dashboard"
         date="11 mins ago"
         description="Hello, world! This is a notification message."
-        :icon="{ component: 'campaign', color: 'white' }"
+        :icon="{component: 'campaign', color: 'white'}"
         color="danger"
         :close-handler="closeSnackbar"
       />
@@ -176,11 +159,11 @@
 </template>
 
 <script>
-import MaterialAlert from "@/components/MaterialAlert.vue";
-import MaterialSnackbar from "@/components/MaterialSnackbar.vue";
+import MaterialAlert from '@/components/MaterialAlert.vue'
+import MaterialSnackbar from '@/components/MaterialSnackbar.vue'
 
 export default {
-  name: "Notifications",
+  name: 'Notifications',
   components: {
     MaterialAlert,
     MaterialSnackbar,
@@ -188,12 +171,12 @@ export default {
   data() {
     return {
       snackbar: null,
-    };
+    }
   },
   methods: {
     closeSnackbar() {
-      this.snackbar = null;
+      this.snackbar = null
     },
   },
-};
+}
 </script>

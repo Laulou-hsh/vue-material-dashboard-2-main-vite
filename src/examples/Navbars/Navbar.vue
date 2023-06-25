@@ -8,34 +8,22 @@
   >
     <div class="px-3 py-1 container-fluid">
       <breadcrumbs :currentPage="currentRouteName" :color="color" />
-      <div
-        class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4"
-        id="navbar"
-      >
-        <div
-          class="pe-md-3 d-flex align-items-center ms-md-auto"
-        >
+      <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" id="navbar">
+        <div class="pe-md-3 d-flex align-items-center ms-md-auto">
           <material-input id="search" label="Search here" />
         </div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
             <router-link
-              :to="{ name: 'SignIn' }"
+              :to="{name: 'SignIn'}"
               class="px-0 nav-link font-weight-bold lh-1"
               :class="color ? color : 'text-body'"
             >
-              <i class="material-icons me-sm-1">
-                account_circle
-              </i>
+              <i class="material-icons me-sm-1"> account_circle </i>
             </router-link>
           </li>
           <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-            <a
-              href="#"
-              @click="toggleSidebar"
-              class="p-0 nav-link text-body lh-1"
-              id="iconNavbarSidenav"
-            >
+            <a href="#" @click="toggleSidebar" class="p-0 nav-link text-body lh-1" id="iconNavbarSidenav">
               <div class="sidenav-toggler-inner">
                 <i class="sidenav-toggler-line"></i>
                 <i class="sidenav-toggler-line"></i>
@@ -44,19 +32,11 @@
             </a>
           </li>
           <li class="px-3 nav-item d-flex align-items-center">
-            <a
-              class="p-0 nav-link lh-1"
-              @click="toggleConfigurator"
-              :class="color ? color : 'text-body'"
-            >
-              <i class="material-icons fixed-plugin-button-nav cursor-pointer">
-                settings
-              </i>
+            <a class="p-0 nav-link lh-1" @click="toggleConfigurator" :class="color ? color : 'text-body'">
+              <i class="material-icons fixed-plugin-button-nav cursor-pointer"> settings </i>
             </a>
           </li>
-          <li
-            class="nav-item dropdown d-flex align-items-center pe-2"
-          >
+          <li class="nav-item dropdown d-flex align-items-center pe-2">
             <a
               href="#"
               class="p-0 nav-link lh-1"
@@ -77,16 +57,11 @@
                 <a class="dropdown-item border-radius-md" href="javascript:;">
                   <div class="py-1 d-flex">
                     <div class="my-auto">
-                      <img
-                        src="../../assets/img/team-2.jpg"
-                        class="avatar avatar-sm me-3"
-                        alt="user image"
-                      />
+                      <img src="../../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user image" />
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                       <h6 class="mb-1 text-sm font-weight-normal">
-                        <span class="font-weight-bold">New message</span> from
-                        Laur
+                        <span class="font-weight-bold">New message</span> from Laur
                       </h6>
                       <p class="mb-0 text-xs text-secondary">
                         <i class="fa fa-clock me-1"></i>
@@ -108,8 +83,7 @@
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                       <h6 class="mb-1 text-sm font-weight-normal">
-                        <span class="font-weight-bold">New album</span> by
-                        Travis Scott
+                        <span class="font-weight-bold">New album</span> by Travis Scott
                       </h6>
                       <p class="mb-0 text-xs text-secondary">
                         <i class="fa fa-clock me-1"></i>
@@ -122,9 +96,7 @@
               <li>
                 <a class="dropdown-item border-radius-md" href="javascript:;">
                   <div class="py-1 d-flex">
-                    <div
-                      class="my-auto avatar avatar-sm bg-gradient-secondary me-3"
-                    >
+                    <div class="my-auto avatar avatar-sm bg-gradient-secondary me-3">
                       <svg
                         width="12px"
                         height="12px"
@@ -134,17 +106,8 @@
                         xmlns:xlink="http://www.w3.org/1999/xlink"
                       >
                         <title>credit-card</title>
-                        <g
-                          stroke="none"
-                          stroke-width="1"
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <g
-                            transform="translate(-2169.000000, -745.000000)"
-                            fill="#FFFFFF"
-                            fill-rule="nonzero"
-                          >
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
                             <g transform="translate(1716.000000, 291.000000)">
                               <g transform="translate(453.000000, 454.000000)">
                                 <path
@@ -163,9 +126,7 @@
                       </svg>
                     </div>
                     <div class="d-flex flex-column justify-content-center">
-                      <h6 class="mb-1 text-sm font-weight-normal">
-                        Payment successfully completed
-                      </h6>
+                      <h6 class="mb-1 text-sm font-weight-normal">Payment successfully completed</h6>
                       <p class="mb-0 text-xs text-secondary">
                         <i class="fa fa-clock me-1"></i>
                         2 days
@@ -184,14 +145,14 @@
 <script>
 import MaterialInput from '@/components/MaterialInput.vue'
 import Breadcrumbs from '../Breadcrumbs.vue'
-import { mapActions, mapState } from 'pinia'
-import { indexStore } from '@/store/index.js'
+import {mapActions, mapState} from 'pinia'
+import {indexStore} from '@/store/index.js'
 
 export default {
   name: 'navbar',
   data() {
     return {
-      showMenu: false
+      showMenu: false,
     }
   },
   props: ['minNav', 'color'],
@@ -203,18 +164,18 @@ export default {
 
     toggleSidebar() {
       this.navbarMinimize()
-    }
+    },
   },
   components: {
     Breadcrumbs,
-    MaterialInput
+    MaterialInput,
   },
   computed: {
     ...mapState(indexStore, ['isAbsolute']),
 
     currentRouteName() {
       return this.$route.name
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,16 +1,10 @@
 <template>
   <nav aria-label="breadcrumb">
-    <ol
-      class="px-0 pt-1 pb-0 mb-0 bg-transparent breadcrumb me-sm-6"
-    >
+    <ol class="px-0 pt-1 pb-0 mb-0 bg-transparent breadcrumb me-sm-6">
       <li class="text-sm breadcrumb-item" :class="color">
         <a :class="color" class="opacity-8" href="#">Pages</a>
       </li>
-      <li
-        class="text-sm breadcrumb-item active"
-        :class="color"
-        aria-current="page"
-      >
+      <li class="text-sm breadcrumb-item active" :class="color" aria-current="page">
         {{ currentPage }}
       </li>
     </ol>
@@ -22,16 +16,16 @@
 
 <script>
 export default {
-  name: "breadcrumbs",
+  name: 'breadcrumbs',
   props: {
     currentPage: {
       type: String,
-      required: "",
+      required: '',
     },
     color: {
       type: String,
-      default: "text-dark",
+      default: 'text-dark',
     },
   },
-};
+}
 </script>

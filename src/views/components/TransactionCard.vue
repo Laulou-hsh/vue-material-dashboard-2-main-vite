@@ -12,13 +12,9 @@
       </div>
     </div>
     <div class="card-body pt-4 p-3">
-      <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">
-        Newest
-      </h6>
+      <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Newest</h6>
       <ul class="list-group">
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="danger"
@@ -33,15 +29,9 @@
               <span class="text-xs">27 March 2020, at 12:30 PM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold"
-          >
-            - $ 2,500
-          </div>
+          <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">- $ 2,500</div>
         </li>
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="success"
@@ -56,20 +46,12 @@
               <span class="text-xs">27 March 2020, at 04:30 AM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
-          >
-            + $ 2,000
-          </div>
+          <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">+ $ 2,000</div>
         </li>
       </ul>
-      <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">
-        Yesterday
-      </h6>
+      <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Yesterday</h6>
       <ul class="list-group">
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="success"
@@ -84,15 +66,9 @@
               <span class="text-xs">26 March 2020, at 13:45 PM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
-          >
-            + $ 750
-          </div>
+          <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">+ $ 750</div>
         </li>
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="success"
@@ -107,15 +83,9 @@
               <span class="text-xs">26 March 2020, at 12:30 PM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
-          >
-            + $ 1,000
-          </div>
+          <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">+ $ 1,000</div>
         </li>
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="success"
@@ -130,15 +100,9 @@
               <span class="text-xs">26 March 2020, at 08:30 AM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold"
-          >
-            + $ 2,500
-          </div>
+          <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">+ $ 2,500</div>
         </li>
-        <li
-          class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg"
-        >
+        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
           <div class="d-flex align-items-center">
             <material-button
               color="dark"
@@ -153,11 +117,7 @@
               <span class="text-xs">26 March 2020, at 05:00 AM</span>
             </div>
           </div>
-          <div
-            class="d-flex align-items-center text-dark text-sm font-weight-bold"
-          >
-            Pending
-          </div>
+          <div class="d-flex align-items-center text-dark text-sm font-weight-bold">Pending</div>
         </li>
       </ul>
     </div>
@@ -165,12 +125,12 @@
 </template>
 
 <script>
-import MaterialButton from "@/components/MaterialButton.vue";
+import MaterialButton from '@/components/MaterialButton.vue'
 
 export default {
-  name: "transaction-card",
+  name: 'transaction-card',
   components: {
     MaterialButton,
   },
-};
+}
 </script>

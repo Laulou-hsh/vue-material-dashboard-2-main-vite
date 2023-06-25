@@ -1,13 +1,6 @@
 <template>
   <div class="form-check form-switch d-flex">
-    <input
-      :id="id"
-      class="form-check-input"
-      :class="$attrs.class"
-      type="checkbox"
-      :name="name"
-      :checked="checked"
-    />
+    <input :id="id" class="form-check-input" :class="$attrs.class" type="checkbox" :name="name" :checked="checked" />
     <label class="form-check-label ms-3" :class="labelClass" :for="id">
       <slot />
     </label>
@@ -16,7 +9,7 @@
 
 <script>
 export default {
-  name: "MaterialSwitch",
+  name: 'MaterialSwitch',
   props: {
     name: {
       type: String,
@@ -32,8 +25,8 @@ export default {
     },
     labelClass: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>

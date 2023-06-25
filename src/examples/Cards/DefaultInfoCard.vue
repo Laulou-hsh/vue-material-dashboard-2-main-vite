@@ -2,13 +2,11 @@
   <div class="card">
     <div class="p-3 mx-4 text-center card-header d-flex justify-content-center">
       <div
-        :class="
-          typeof icon === 'object' ? icon.background : 'bg-gradient-success'
-        "
+        :class="typeof icon === 'object' ? icon.background : 'bg-gradient-success'"
         class="icon icon-shape icon-lg shadow text-center border-radius-lg"
       >
         <i class="material-icons opacity-10" aria-hidden="true">{{
-          typeof icon === "string" ? icon : icon.component
+          typeof icon === 'string' ? icon : icon.component
         }}</i>
       </div>
     </div>
@@ -23,7 +21,7 @@
 
 <script>
 export default {
-  name: "DefaultInfoCard",
+  name: 'DefaultInfoCard',
   props: {
     icon: {
       type: [String, Object],
@@ -35,7 +33,7 @@ export default {
         type: String,
       },
       default: () => ({
-        background: "bg-white",
+        background: 'bg-white',
       }),
     },
     title: {
@@ -44,12 +42,12 @@ export default {
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>

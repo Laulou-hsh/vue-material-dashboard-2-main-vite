@@ -22,69 +22,35 @@
                 <div
                   class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center"
                   :style="{
-                    backgroundImage:
-                      'url(src/assets/img/illustrations/illustration-signin.jpg)',
+                    backgroundImage: 'url(src/assets/img/illustrations/illustration-signin.jpg)',
                   }"
                 ></div>
               </div>
-              <div
-                class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5"
-              >
+              <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
                 <div class="card card-plain">
                   <div class="pb-0 card-header bg-transparent mb-4">
                     <h4 class="font-weight-bolder">Sign In</h4>
-                    <p class="mb-0">
-                      Enter your email and password to register
-                    </p>
+                    <p class="mb-0">Enter your email and password to register</p>
                   </div>
                   <div class="card-body">
                     <form role="form">
                       <div class="mb-3">
-                        <material-input
-                          id="name"
-                          type="text"
-                          label="Name"
-                          name="name"
-                          size="lg"
-                        />
+                        <material-input id="name" type="text" label="Name" name="name" size="lg" />
                       </div>
                       <div class="mb-3">
-                        <material-input
-                          id="email"
-                          type="email"
-                          label="Email"
-                          name="email"
-                          size="lg"
-                        />
+                        <material-input id="email" type="email" label="Email" name="email" size="lg" />
                       </div>
                       <div class="mb-3">
-                        <material-input
-                          id="password"
-                          type="password"
-                          label="Password"
-                          name="password"
-                          size="lg"
-                        />
+                        <material-input id="password" type="password" label="Password" name="password" size="lg" />
                       </div>
-                      <material-checkbox
-                        id="flexCheckDefault"
-                        class="font-weight-light"
-                        checked
-                      >
+                      <material-checkbox id="flexCheckDefault" class="font-weight-light" checked>
                         I agree the
-                        <a
-                          href="../../../pages/privacy.html"
-                          class="text-dark font-weight-bolder"
+                        <a href="../../../pages/privacy.html" class="text-dark font-weight-bolder"
                           >Terms and Conditions</a
                         >
                       </material-checkbox>
                       <div class="text-center">
-                        <material-button
-                          class="mt-4"
-                          variant="gradient"
-                          color="success"
-                          fullWidth
-                          size="lg"
+                        <material-button class="mt-4" variant="gradient" color="success" fullWidth size="lg"
                           >Sign Up</material-button
                         >
                       </div>
@@ -93,9 +59,7 @@
                   <div class="px-1 pt-0 text-center card-footer px-lg-2">
                     <p class="mx-auto mb-4 text-sm">
                       Don't have an account?
-                      <router-link
-                        :to="{ name: 'SignIn' }"
-                        class="text-success text-gradient font-weight-bold"
+                      <router-link :to="{name: 'SignIn'}" class="text-success text-gradient font-weight-bold"
                         >Sign In</router-link
                       >
                     </p>
@@ -111,16 +75,16 @@
 </template>
 
 <script>
-import Navbar from "@/examples/PageLayout/Navbar.vue";
-import MaterialInput from "@/components/MaterialInput.vue";
-import MaterialCheckbox from "@/components/MaterialCheckbox.vue";
-import MaterialButton from "@/components/MaterialButton.vue";
-const body = document.getElementsByTagName("body")[0];
-import { mapActions } from 'pinia'
-import { indexStore } from '@/store/index.js'
+import Navbar from '@/examples/PageLayout/Navbar.vue'
+import MaterialInput from '@/components/MaterialInput.vue'
+import MaterialCheckbox from '@/components/MaterialCheckbox.vue'
+import MaterialButton from '@/components/MaterialButton.vue'
+const body = document.getElementsByTagName('body')[0]
+import {mapActions} from 'pinia'
+import {indexStore} from '@/store/index.js'
 
 export default {
-  name: "sign-up",
+  name: 'sign-up',
   components: {
     Navbar,
     MaterialInput,
@@ -128,18 +92,18 @@ export default {
     MaterialButton,
   },
   beforeMount() {
-    this.toggleEveryDisplay();
-    this.toggleHideConfig();
-    body.classList.remove("bg-gray-100");
+    this.toggleEveryDisplay()
+    this.toggleHideConfig()
+    body.classList.remove('bg-gray-100')
   },
   beforeUnmount() {
-    this.toggleEveryDisplay();
-    this.toggleHideConfig();
-    body.classList.add("bg-gray-100");
+    this.toggleEveryDisplay()
+    this.toggleHideConfig()
+    body.classList.add('bg-gray-100')
   },
   methods: {
     // ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
-    ...mapActions(indexStore, ["toggleEveryDisplay", "toggleHideConfig"]),
+    ...mapActions(indexStore, ['toggleEveryDisplay', 'toggleHideConfig']),
   },
-};
+}
 </script>

@@ -27,9 +27,7 @@
               <h6 class="text-white mb-0">{{ card.expiryDate }}</h6>
             </div>
           </div>
-          <div
-            class="w-20 d-flex align-items-end justify-content-end ms-auto"
-          >
+          <div class="w-20 d-flex align-items-end justify-content-end ms-auto">
             <material-avatar class="w-60 mt-2" :img="img1" alt="logo" />
           </div>
         </div>
@@ -39,11 +37,11 @@
 </template>
 
 <script>
-import MaterialAvatar from "@/components/MaterialAvatar.vue"
-import img1 from "../../assets/img/logos/mastercard.png"
+import MaterialAvatar from '@/components/MaterialAvatar.vue'
+import img1 from '../../assets/img/logos/mastercard.png'
 
 export default {
-  name: "MasterCard",
+  name: 'MasterCard',
   components: {
     MaterialAvatar,
   },
@@ -57,19 +55,19 @@ export default {
       expiryText: String,
       background: String,
       default: () => ({
-        number: "4562   1122   4594   7852",
-        holderName: "Jack Peterson",
-        expiryDate: "11/22",
-        holderText: "Card Holder",
-        expiryText: "Expires",
-        background: "dark",
+        number: '4562   1122   4594   7852',
+        holderName: 'Jack Peterson',
+        expiryDate: '11/22',
+        holderText: 'Card Holder',
+        expiryText: 'Expires',
+        background: 'dark',
       }),
     },
   },
   data() {
     return {
       img1,
-    };
+    }
   },
-};
+}
 </script>

@@ -1,12 +1,6 @@
 <template>
   <div class="form-check">
-    <input
-      :id="id"
-      class="form-check-input"
-      type="radio"
-      :name="name"
-      :checked="checked"
-    />
+    <input :id="id" class="form-check-input" type="radio" :name="name" :checked="checked" />
     <label class="custom-control-label" :for="id">
       <slot />
     </label>
@@ -15,7 +9,7 @@
 
 <script>
 export default {
-  name: "MaterialRadio",
+  name: 'MaterialRadio',
   props: {
     name: {
       type: String,
@@ -30,5 +24,5 @@ export default {
       default: false,
     },
   },
-};
+}
 </script>

@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import DefaultDashboard from "@/views/dashboards/Default.vue";
+import DefaultDashboard from '@/views/dashboards/Default.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     DefaultDashboard,
   },
-};
+}
 </script>

@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'Today\'s Money', value: '$53k' }"
+              :title="{text: 'Today\'s Money', value: '$53k'}"
               detail="<span class='text-success text-sm font-weight-bolder'>+55%</span> than last week"
               :icon="{
                 name: 'weekend',
@@ -16,7 +16,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'Today\'s Users', value: '2,300' }"
+              :title="{text: 'Today\'s Users', value: '2,300'}"
               detail="<span class='text-success text-sm font-weight-bolder'>+3%</span> than last month"
               :icon="{
                 name: 'leaderboard',
@@ -27,7 +27,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'New Clients', value: '3,462' }"
+              :title="{text: 'New Clients', value: '3,462'}"
               detail="<span class='text-danger text-sm font-weight-bolder'>-2%</span> than yesterday"
               :icon="{
                 name: 'person',
@@ -38,7 +38,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'Sales', value: '$103,430' }"
+              :title="{text: 'Sales', value: '$103,430'}"
               detail="<span class='text-success text-sm font-weight-bolder'>+5%</span> Just updated"
               :icon="{
                 name: 'weekend',
@@ -75,17 +75,7 @@
             >
               <ReportsLineChart
                 :chart="{
-                  labels: [
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec',
-                  ],
+                  labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                   datasets: {
                     label: 'Mobile apps',
                     data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
@@ -104,17 +94,7 @@
               <reports-line-chart
                 id="tasks-chart"
                 :chart="{
-                  labels: [
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec',
-                  ],
+                  labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                   datasets: {
                     label: 'Mobile apps',
                     data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
@@ -139,42 +119,42 @@
               title: 'Material XD Material XD Version',
               members: [team1, team2, team3, team4],
               budget: '$14,000',
-              progress: { percentage: 60, color: 'info' },
+              progress: {percentage: 60, color: 'info'},
             },
             {
               logo: logoAtlassian,
               title: 'Add Progress Track',
               members: [team2, team4],
               budget: '$3,000',
-              progress: { percentage: 10, color: 'info' },
+              progress: {percentage: 10, color: 'info'},
             },
             {
               logo: logoSlack,
               title: 'Fix Platform Errors',
               members: [team3, team1],
               budget: 'Not set',
-              progress: { percentage: 100, color: 'success' },
+              progress: {percentage: 100, color: 'success'},
             },
             {
               logo: logoSpotify,
               title: 'Launch our Mobile App',
               members: [team4, team3, team4, team1],
               budget: '$20,500',
-              progress: { percentage: 100, color: 'success' },
+              progress: {percentage: 100, color: 'success'},
             },
             {
               logo: logoJira,
               title: 'Add the New Pricing Page',
               members: [team4],
               budget: '$500',
-              progress: { percentage: 25, color: 'info' },
+              progress: {percentage: 25, color: 'info'},
             },
             {
               logo: logoJira,
               title: 'Redesign New Online Shop',
               members: [team1, team4],
               budget: '$2,000',
-              progress: { percentage: 40, color: 'info' },
+              progress: {percentage: 40, color: 'info'},
             },
           ]"
         />
@@ -233,25 +213,25 @@
   </div>
 </template>
 <script>
-import ChartHolderCard from "./components/ChartHolderCard.vue";
-import ReportsBarChart from "@/examples/Charts/ReportsBarChart.vue";
-import ReportsLineChart from "@/examples/Charts/ReportsLineChart.vue";
-import MiniStatisticsCard from "./components/MiniStatisticsCard.vue";
-import ProjectCard from "./components/ProjectCard.vue";
-import TimelineList from "@/examples/Cards/TimelineList.vue";
-import TimelineItem from "@/examples/Cards/TimelineItem.vue";
-import logoXD from "@/assets/img/small-logos/logo-xd.svg";
-import logoAtlassian from "@/assets/img/small-logos/logo-atlassian.svg";
-import logoSlack from "@/assets/img/small-logos/logo-slack.svg";
-import logoSpotify from "@/assets/img/small-logos/logo-spotify.svg";
-import logoJira from "@/assets/img/small-logos/logo-jira.svg";
-import logoInvision from "@/assets/img/small-logos/logo-invision.svg";
-import team1 from "@/assets/img/team-1.jpg";
-import team2 from "@/assets/img/team-2.jpg";
-import team3 from "@/assets/img/team-3.jpg";
-import team4 from "@/assets/img/team-4.jpg";
+import ChartHolderCard from './components/ChartHolderCard.vue'
+import ReportsBarChart from '@/examples/Charts/ReportsBarChart.vue'
+import ReportsLineChart from '@/examples/Charts/ReportsLineChart.vue'
+import MiniStatisticsCard from './components/MiniStatisticsCard.vue'
+import ProjectCard from './components/ProjectCard.vue'
+import TimelineList from '@/examples/Cards/TimelineList.vue'
+import TimelineItem from '@/examples/Cards/TimelineItem.vue'
+import logoXD from '@/assets/img/small-logos/logo-xd.svg'
+import logoAtlassian from '@/assets/img/small-logos/logo-atlassian.svg'
+import logoSlack from '@/assets/img/small-logos/logo-slack.svg'
+import logoSpotify from '@/assets/img/small-logos/logo-spotify.svg'
+import logoJira from '@/assets/img/small-logos/logo-jira.svg'
+import logoInvision from '@/assets/img/small-logos/logo-invision.svg'
+import team1 from '@/assets/img/team-1.jpg'
+import team2 from '@/assets/img/team-2.jpg'
+import team3 from '@/assets/img/team-3.jpg'
+import team4 from '@/assets/img/team-4.jpg'
 export default {
-  name: "dashboard-default",
+  name: 'dashboard-default',
   data() {
     return {
       logoXD,
@@ -264,7 +244,7 @@ export default {
       logoSpotify,
       logoJira,
       logoInvision,
-    };
+    }
   },
   components: {
     ChartHolderCard,
@@ -275,5 +255,5 @@ export default {
     TimelineList,
     TimelineItem,
   },
-};
+}
 </script>

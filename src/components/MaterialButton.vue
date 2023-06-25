@@ -1,27 +1,24 @@
 <template>
-  <button
-    class="btn mb-0"
-    :class="getClasses(variant, color, size, fullWidth, active)"
-  >
+  <button class="btn mb-0" :class="getClasses(variant, color, size, fullWidth, active)">
     <slot />
   </button>
 </template>
 
 <script>
 export default {
-  name: "MaterialButton",
+  name: 'MaterialButton',
   props: {
     color: {
       type: String,
-      default: "success",
+      default: 'success',
     },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
     },
     variant: {
       type: String,
-      default: "fill",
+      default: 'fill',
     },
     fullWidth: {
       type: Boolean,
@@ -34,25 +31,25 @@ export default {
   },
   methods: {
     getClasses: (variant, color, size, fullWidth, active) => {
-      let colorValue, sizeValue, fullWidthValue, activeValue;
+      let colorValue, sizeValue, fullWidthValue, activeValue
 
       // Setting the button variant and color
-      if (variant === "gradient") {
-        colorValue = `bg-gradient-${color}`;
-      } else if (variant === "outline") {
-        colorValue = `btn-outline-${color}`;
+      if (variant === 'gradient') {
+        colorValue = `bg-gradient-${color}`
+      } else if (variant === 'outline') {
+        colorValue = `btn-outline-${color}`
       } else {
-        colorValue = `btn-${color}`;
+        colorValue = `btn-${color}`
       }
 
-      sizeValue = size ? `btn-${size}` : null;
+      sizeValue = size ? `btn-${size}` : null
 
-      fullWidthValue = fullWidth ? `w-100` : null;
+      fullWidthValue = fullWidth ? `w-100` : null
 
-      activeValue = active ? `active` : null;
+      activeValue = active ? `active` : null
 
-      return `${colorValue} ${sizeValue} ${fullWidthValue} ${activeValue}`;
+      return `${colorValue} ${sizeValue} ${fullWidthValue} ${activeValue}`
     },
   },
-};
+}
 </script>

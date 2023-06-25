@@ -10,11 +10,11 @@
 
 <script>
 export default {
-  name: "MaterialPaginationItem",
+  name: 'MaterialPaginationItem',
   props: {
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     active: {
       type: Boolean,
@@ -35,13 +35,13 @@ export default {
   },
   methods: {
     getClasses: (active, disabled) => {
-      let activeValue, disabledValue;
+      let activeValue, disabledValue
 
-      activeValue = active ? "active" : null;
-      disabledValue = disabled ? "disabled" : null;
+      activeValue = active ? 'active' : null
+      disabledValue = disabled ? 'disabled' : null
 
-      return `${activeValue} ${disabledValue}`;
+      return `${activeValue} ${disabledValue}`
     },
   },
-};
+}
 </script>

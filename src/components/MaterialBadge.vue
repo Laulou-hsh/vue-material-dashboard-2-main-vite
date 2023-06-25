@@ -1,27 +1,24 @@
 <template>
-  <span
-    class="badge"
-    :class="getClasses(variant, color, size, circle, floating)"
-  >
+  <span class="badge" :class="getClasses(variant, color, size, circle, floating)">
     <slot />
   </span>
 </template>
 
 <script>
 export default {
-  name: "MaterialBadge",
+  name: 'MaterialBadge',
   props: {
     size: {
       type: String,
-      default: "md",
+      default: 'md',
     },
     color: {
       type: String,
-      default: "success",
+      default: 'success',
     },
     variant: {
       type: String,
-      default: "fill",
+      default: 'fill',
     },
     circle: {
       type: Boolean,
@@ -34,22 +31,22 @@ export default {
   },
   methods: {
     getClasses: (variant, color, size, circle, floating) => {
-      let colorValue, sizeValue, circleValue, floatingValue;
+      let colorValue, sizeValue, circleValue, floatingValue
 
-      if (variant === "gradient") {
-        colorValue = `bg-gradient-${color}`;
+      if (variant === 'gradient') {
+        colorValue = `bg-gradient-${color}`
       } else {
-        colorValue = `badge-${color}`;
+        colorValue = `badge-${color}`
       }
 
-      sizeValue = size ? `badge-${size}` : null;
+      sizeValue = size ? `badge-${size}` : null
 
-      circleValue = circle ? "badge-circle" : null;
+      circleValue = circle ? 'badge-circle' : null
 
-      floatingValue = floating ? "badge-floating" : null;
+      floatingValue = floating ? 'badge-floating' : null
 
-      return `${colorValue} ${sizeValue} ${circleValue} ${floatingValue}`;
+      return `${colorValue} ${sizeValue} ${circleValue} ${floatingValue}`
     },
   },
-};
+}
 </script>

@@ -4,18 +4,18 @@
   </div>
 </template>
 <script>
-import Chart from "chart.js/auto";
+import Chart from 'chart.js/auto'
 
 export default {
-  name: "ReportsBarChart",
+  name: 'ReportsBarChart',
   props: {
     id: {
       type: String,
-      default: "bar-chart",
+      default: 'bar-chart',
     },
     height: {
       type: [Number, String],
-      default: "170",
+      default: '170',
     },
     chart: {
       type: Object,
@@ -30,15 +30,15 @@ export default {
   },
 
   mounted() {
-    var ctx = document.getElementById(this.id).getContext("2d");
+    var ctx = document.getElementById(this.id).getContext('2d')
 
-    let chartStatus = Chart.getChart(this.id);
-    if (chartStatus != undefined) {
-      chartStatus.destroy();
+    let chartStatus = Chart.getChart(this.id)
+    if (chartStatus !== undefined) {
+      chartStatus.destroy()
     }
 
     new Chart(ctx, {
-      type: "bar",
+      type: 'bar',
       data: {
         labels: this.chart.labels,
         datasets: [
@@ -48,7 +48,7 @@ export default {
             borderWidth: 0,
             borderRadius: 4,
             borderSkipped: false,
-            backgroundColor: "rgba(255, 255, 255, .8)",
+            backgroundColor: 'rgba(255, 255, 255, .8)',
             data: this.chart.datasets.data,
             maxBarThickness: 6,
           },
@@ -64,7 +64,7 @@ export default {
         },
         interaction: {
           intersect: false,
-          mode: "index",
+          mode: 'index',
         },
         scales: {
           y: {
@@ -74,7 +74,7 @@ export default {
               drawOnChartArea: true,
               drawTicks: false,
               borderDash: [5, 5],
-              color: "rgba(255, 255, 255, .2)",
+              color: 'rgba(255, 255, 255, .2)',
             },
             ticks: {
               suggestedMin: 0,
@@ -84,11 +84,11 @@ export default {
               font: {
                 size: 14,
                 weight: 300,
-                family: "Roboto",
-                style: "normal",
+                family: 'Roboto',
+                style: 'normal',
                 lineHeight: 2,
               },
-              color: "#fff",
+              color: '#fff',
             },
           },
           x: {
@@ -98,24 +98,24 @@ export default {
               drawOnChartArea: true,
               drawTicks: false,
               borderDash: [5, 5],
-              color: "rgba(255, 255, 255, .2)",
+              color: 'rgba(255, 255, 255, .2)',
             },
             ticks: {
               display: true,
-              color: "#f8f9fa",
+              color: '#f8f9fa',
               padding: 10,
               font: {
                 size: 14,
                 weight: 300,
-                family: "Roboto",
-                style: "normal",
+                family: 'Roboto',
+                style: 'normal',
                 lineHeight: 2,
               },
             },
           },
         },
       },
-    });
+    })
   },
-};
+}
 </script>

@@ -1,24 +1,20 @@
 <template>
   <div class="progress">
-    <div
-      class="progress-bar"
-      :class="getClasses(color, variant)"
-      :style="{ width: percentage + '%' }"
-    ></div>
+    <div class="progress-bar" :class="getClasses(color, variant)" :style="{width: percentage + '%'}"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MaterialProgress",
+  name: 'MaterialProgress',
   props: {
     color: {
       type: String,
-      default: "success",
+      default: 'success',
     },
     variant: {
       type: String,
-      default: "fill",
+      default: 'fill',
     },
     percentage: {
       type: Number,
@@ -27,16 +23,16 @@ export default {
   },
   methods: {
     getClasses: (color, variant) => {
-      let colorValue;
+      let colorValue
 
-      if (variant === "gradient") {
-        colorValue = `bg-gradient-${color}`;
+      if (variant === 'gradient') {
+        colorValue = `bg-gradient-${color}`
       } else {
-        colorValue = `bg-${color}`;
+        colorValue = `bg-${color}`
       }
 
-      return `${colorValue}`;
+      return `${colorValue}`
     },
   },
-};
+}
 </script>

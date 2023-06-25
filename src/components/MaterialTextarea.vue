@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="input-group"
-    :class="`input-group-${variant} ${getStatus(error, success)}`"
-  >
+  <div class="input-group" :class="`input-group-${variant} ${getStatus(error, success)}`">
     <textarea
       :id="id"
       class="form-control"
@@ -17,14 +14,14 @@
 </template>
 
 <script>
-import setMaterialInput from "@/assets/js/material-input.js";
+import setMaterialInput from '@/assets/js/material-input.js'
 
 export default {
-  name: "MaterialTextarea",
+  name: 'MaterialTextarea',
   props: {
     variant: {
       type: String,
-      default: "outline",
+      default: 'outline',
     },
     id: {
       type: String,
@@ -32,15 +29,15 @@ export default {
     },
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: String,
-      default: "",
+      default: '',
     },
     placeholder: {
       type: String,
-      default: "Your text here...",
+      default: 'Your text here...',
     },
     isRequired: Boolean,
     disabled: {
@@ -61,22 +58,22 @@ export default {
     },
   },
   mounted() {
-    setMaterialInput();
+    setMaterialInput()
   },
   methods: {
     getStatus: (error, success) => {
-      let isValidValue;
+      let isValidValue
 
       if (success) {
-        isValidValue = "is-valid";
+        isValidValue = 'is-valid'
       } else if (error) {
-        isValidValue = "is-invalid";
+        isValidValue = 'is-invalid'
       } else {
-        isValidValue = null;
+        isValidValue = null
       }
 
-      return isValidValue;
+      return isValidValue
     },
   },
-};
+}
 </script>

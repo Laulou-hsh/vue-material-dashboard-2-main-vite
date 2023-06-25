@@ -6,26 +6,26 @@
 
 <script>
 export default {
-  name: "MaterialPagination",
+  name: 'MaterialPagination',
   props: {
     color: {
       type: String,
-      default: "success",
+      default: 'success',
     },
     size: {
       type: String,
-      default: "md",
+      default: 'md',
     },
   },
   methods: {
     getClasses: (color, size) => {
-      let colorValue, sizeValue;
+      let colorValue, sizeValue
 
-      colorValue = color ? `pagination-${color}` : null;
-      sizeValue = size ? `pagination-${size}` : null;
+      colorValue = color ? `pagination-${color}` : null
+      sizeValue = size ? `pagination-${size}` : null
 
-      return `${colorValue} ${sizeValue}`;
+      return `${colorValue} ${sizeValue}`
     },
   },
-};
+}
 </script>

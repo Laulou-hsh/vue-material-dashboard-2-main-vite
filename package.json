@@ -2,7 +2,6 @@
   "name": "vue-material-dashboard-2-main-vite",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,11 +20,11 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-prettier": "6.0.0",
-    "eslint": "6.7.2",
-    "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-vue": "7.0.0",
-    "prettier": "2.2.1",
-    "sass": "1.43.3",
+    "eslint": "8.43.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-vue": "9.15.1",
+    "prettier": "2.8.8",
+    "sass": "1.63.6",
     "vite": "^4.3.9"
   }
 }
