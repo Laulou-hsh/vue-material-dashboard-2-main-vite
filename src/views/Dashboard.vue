@@ -50,24 +50,24 @@
         </div>
         <div class="row mt-4">
           <div class="col-lg-4 col-md-6 mt-4">
-            <chart-holder-card
+            <ChartHolderCard
               title="Website Views"
               subtitle="Last Campaign Performance"
               update="campaign sent 2 days ago"
             >
-              <ReportsBarChart
+              <BarChart
                 :chart="{
-                  labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                  xAxislDatas: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
                   datasets: {
                     label: 'Sales',
                     data: [50, 20, 10, 22, 50, 10, 40],
                   },
                 }"
               />
-            </chart-holder-card>
+            </ChartHolderCard>
           </div>
           <div class="col-lg-4 col-md-6 mt-4">
-            <chart-holder-card
+            <ChartHolderCard
               title="Daily Sales"
               subtitle="(<span class='font-weight-bolder'>+15%</span>) increase in today sales."
               update="updated 4 min ago"
@@ -82,10 +82,10 @@
                   },
                 }"
               />
-            </chart-holder-card>
+            </ChartHolderCard>
           </div>
           <div class="col-lg-4 mt-4">
-            <chart-holder-card
+            <ChartHolderCard
               title="Completed Tasks"
               subtitle="Last Campaign Performance"
               update="just updated"
@@ -101,7 +101,7 @@
                   },
                 }"
               />
-            </chart-holder-card>
+            </ChartHolderCard>
           </div>
         </div>
       </div>
@@ -214,7 +214,7 @@
 </template>
 <script>
 import ChartHolderCard from './components/ChartHolderCard.vue'
-import ReportsBarChart from '@/examples/Charts/ReportsBarChart.vue'
+import BarChart from '@/examples/Charts/BarChart.vue'
 import ReportsLineChart from '@/examples/Charts/ReportsLineChart.vue'
 import MiniStatisticsCard from './components/MiniStatisticsCard.vue'
 import ProjectCard from './components/ProjectCard.vue'
@@ -248,7 +248,7 @@ export default {
   },
   components: {
     ChartHolderCard,
-    ReportsBarChart,
+    BarChart,
     ReportsLineChart,
     MiniStatisticsCard,
     ProjectCard,
