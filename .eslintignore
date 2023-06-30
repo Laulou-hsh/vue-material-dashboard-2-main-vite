@@ -4,6 +4,8 @@ dist
 
 node_modules/*
 
+.eslintrc.js
+
 .gitignore
 
 vite.config.js
