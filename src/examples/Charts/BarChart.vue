@@ -31,9 +31,9 @@ export default {
   mounted() {
     const chartDom = document.getElementById(this.id)
     const echart = echarts.init(chartDom)
-    window.addEventListener('resize', function () {
-      echart.resize()
-    })
+    window.onresize = () => {
+      setTimeout(echart.resize, 200)
+    }
     const options = {
       grid: {
         left: '3%',
@@ -126,6 +126,8 @@ export default {
 
 <style scoped>
 .chart {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
