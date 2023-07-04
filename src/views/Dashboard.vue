@@ -73,9 +73,9 @@
               update="updated 4 min ago"
               color="success"
             >
-              <ReportsLineChart
+              <LineChart
                 :chart="{
-                  labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                  xAxislDatas: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                   datasets: {
                     label: 'Mobile apps',
                     data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
@@ -91,10 +91,10 @@
               update="just updated"
               color="dark"
             >
-              <reports-line-chart
+              <LineChart
                 id="tasks-chart"
                 :chart="{
-                  labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                  xAxislDatas: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                   datasets: {
                     label: 'Mobile apps',
                     data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
@@ -215,7 +215,7 @@
 <script>
 import ChartHolderCard from './components/ChartHolderCard.vue'
 import BarChart from '@/examples/Charts/BarChart.vue'
-import ReportsLineChart from '@/examples/Charts/ReportsLineChart.vue'
+import LineChart from '@/examples/Charts/LineChart.vue'
 import MiniStatisticsCard from './components/MiniStatisticsCard.vue'
 import ProjectCard from './components/ProjectCard.vue'
 import TimelineList from '@/examples/Cards/TimelineList.vue'
@@ -249,7 +249,7 @@ export default {
   components: {
     ChartHolderCard,
     BarChart,
-    ReportsLineChart,
+    LineChart,
     MiniStatisticsCard,
     ProjectCard,
     TimelineList,
