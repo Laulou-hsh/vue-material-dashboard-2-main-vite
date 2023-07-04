@@ -11,7 +11,7 @@ import * as echarts from 'echarts'
 const props = defineProps({
   id: {
     type: String,
-    default: 'line-chart2',
+    default: 'line-chart',
   },
   height: {
     type: [Number, String],
