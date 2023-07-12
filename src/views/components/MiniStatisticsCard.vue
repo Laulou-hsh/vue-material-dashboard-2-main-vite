@@ -5,7 +5,8 @@
         class="icon icon-lg icon-shape shadow text-center border-radius-xl mt-n4 position-absolute"
         :class="`bg-gradient-${icon.background} shadow-${icon.background}`"
       >
-        <i class="material-icons opacity-10" :class="icon.color" aria-hidden="true">{{ icon.name }}</i>
+        <!-- <i class="material-icons opacity-10" :class="icon.color" aria-hidden="true">{{ icon.name }}</i> -->
+        <i class="material-icons opacity-10" aria-hidden="true">{{ icon.name }}</i>
       </div>
       <div class="pt-1 text-end">
         <p class="text-sm mb-0 text-capitalize">{{ title.text }}</p>

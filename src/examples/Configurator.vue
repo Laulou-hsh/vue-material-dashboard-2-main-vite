@@ -1,6 +1,6 @@
 <template>
   <div class="fixed-plugin">
-    <a class="px-3 py-2 fixed-plugin-button text-dark position-fixed" @click="toggle">
+    <a class="px-3 py-2 fixed-plugin-button text-dark position-fixed" @click="props.toggle">
       <i class="material-icons py-2">settings</i>
     </a>
     <div class="shadow-lg card">
@@ -9,7 +9,7 @@
           <h5 class="mt-3 mb-0">Material UI Configurator</h5>
           <p>See our dashboard options.</p>
         </div>
-        <div class="mt-4 float-end" @click="toggle">
+        <div class="mt-4 float-end" @click="props.toggle">
           <button class="p-0 btn btn-link text-dark fixed-plugin-close-button">
             <i class="material-icons">clear</i>
           </button>
@@ -40,24 +40,27 @@
         <div class="d-flex">
           <button
             id="btn-dark"
+            ref="btnDark"
             class="px-3 mb-2 btn bg-gradient-dark"
-            :class="sidebarType === 'bg-gradient-dark' ? 'active' : ''"
+            :class="{active: sidebarType === 'bg-gradient-dark'}"
             @click="sidebar('bg-gradient-dark')"
           >
             Dark
           </button>
           <button
             id="btn-transparent"
+            ref="btnTransparent"
             class="px-3 mb-2 btn bg-gradient-dark ms-2"
-            :class="sidebarType === 'bg-transparent' ? 'active' : ''"
+            :class="{active: sidebarType === 'bg-transparent', disabled: isBtnDisabled}"
             @click="sidebar('bg-transparent')"
           >
             Transparent
           </button>
           <button
             id="btn-white"
+            ref="btnWhite"
             class="px-3 mb-2 btn bg-gradient-dark ms-2"
-            :class="sidebarType === 'bg-white' ? 'active' : ''"
+            :class="{active: sidebarType === 'bg-white', disabled: isBtnDisabled}"
             @click="sidebar('bg-white')"
           >
             White
@@ -73,104 +76,79 @@
             <input
               class="form-check-input mt-1 ms-auto"
               type="checkbox"
-              :checked="indexStore.isDarkMode"
+              :checked="store.isDarkMode"
               @click="darkMode"
             />
           </div>
         </div>
         <hr class="horizontal dark my-sm-4" />
-
-        <a
-          class="btn btn-outline-dark w-100"
-          href="https://www.creative-tim.com/learning-lab/vue/overview/material-dashboard/"
-          >View documentation</a
-        >
-        <div class="text-center w-100">
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a
-            href="https://twitter.com/intent/tweet?text=Check%20Vue%20Material%20Dashboard%202%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23vuejs3&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fvue-material-dashboard-2"
-            class="mb-0 btn btn-dark me-2"
-            target="_blank"
-          >
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/vue-material-dashboard-2"
-            class="mb-0 btn btn-dark me-2"
-            target="_blank"
-          >
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import {mapActions, mapState} from 'pinia'
+<script setup>
+import {computed, ref, onBeforeMount} from 'vue'
 import {indexStore} from '@/store/index.js'
 import {activateDarkMode, deactivateDarkMode} from '@/assets/js/dark-mode'
 
-export default {
-  name: 'configurator',
-  props: ['toggle'],
-  data() {
-    return {
-      indexStore,
-    }
-  },
-  methods: {
-    // ...mapMutations(["navbarMinimize", "navbarFixed"]),
-    ...mapActions(indexStore, ['navbarMinimize', 'navbarFixed', 'setColor']),
+const props = defineProps(['toggle'])
+const store = indexStore()
 
-    sidebarColor(color = 'success') {
-      document.querySelector('#sidenav-main').setAttribute('data-color', color)
-      this.setColor(color)
-    },
-
-    sidebar(type) {
-      indexStore.sidebarType = type
-    },
-
-    setNavbarFixed() {
-      if (this.$route.name !== 'Profile') {
-        indexStore.isNavFixed = !indexStore.isNavFixed
-      }
-    },
-
-    darkMode() {
-      if (indexStore.isDarkMode) {
-        indexStore.isDarkMode = false
-        deactivateDarkMode()
-        return
-      } else {
-        indexStore.isDarkMode = true
-        activateDarkMode()
-      }
-    },
-
-    sidenavTypeOnResize() {
-      let transparent = document.querySelector('#btn-transparent')
-      let white = document.querySelector('#btn-white')
-      if (window.innerWidth < 1200) {
-        transparent.classList.add('disabled')
-        white.classList.add('disabled')
-      } else {
-        transparent.classList.remove('disabled')
-        white.classList.remove('disabled')
-      }
-    },
-  },
-  computed: {
-    ...mapState(indexStore, ['sidebarType']),
-    sidenavResponsive() {
-      return this.sidenavTypeOnResize
-    },
-  },
-  beforeMount() {
-    window.addEventListener('resize', this.sidenavTypeOnResize)
-    window.addEventListener('load', this.sidenavTypeOnResize)
-  },
+function sidebarColor(color = 'success') {
+  document.querySelector('#sidenav-main').setAttribute('data-color', color)
+  setColor(color)
 }
+
+function setColor(color) {
+  store.setColor(color)
+}
+
+function sidebar(type) {
+  store.sidebarType = type
+}
+
+// function setNavbarFixed() {
+//   if (this.$route.name !== 'Profile') {
+//     store.isNavFixed = !indexStore.isNavFixed
+//   }
+// }
+
+function darkMode() {
+  if (store.isDarkMode) {
+    store.isDarkMode = false
+    deactivateDarkMode()
+    return
+  } else {
+    store.isDarkMode = true
+    activateDarkMode()
+    return
+  }
+}
+
+const btnTransparent = ref(null)
+const isBtnDisabled = ref(false)
+const btnWhite = ref(null)
+
+function sidenavTypeOnResize() {
+  isBtnDisabled.value = window.innerWidth < 1200
+}
+
+const sidebarType = computed(() => {
+  return store.sidebarType
+})
+
+onBeforeMount(() => {
+  window.addEventListener('resize', sidenavTypeOnResize)
+  window.addEventListener('load', sidenavTypeOnResize)
+})
 </script>
+
+<style scoped>
+.bg-gradient-dark {
+  border: 1px solid transparent !important;
+}
+.fixed-plugin-button {
+  bottom: 40px !important;
+}
+</style>
