@@ -7,19 +7,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MaterialCheckbox',
-  props: {
-    name: {
-      type: String,
-      default: '',
-    },
-    id: {
-      type: String,
-      default: '',
-    },
-    checked: Boolean,
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    default: '',
   },
-}
+  id: {
+    type: String,
+    default: '',
+  },
+  checked: Boolean,
+})
 </script>

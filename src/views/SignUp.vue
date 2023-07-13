@@ -102,7 +102,6 @@ export default {
     body.classList.add('bg-gray-100')
   },
   methods: {
-    // ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
     ...mapActions(indexStore, ['toggleEveryDisplay', 'toggleHideConfig']),
   },
 }

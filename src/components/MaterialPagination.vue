@@ -4,28 +4,22 @@
   </ul>
 </template>
 
-<script>
-export default {
-  name: 'MaterialPagination',
-  props: {
-    color: {
-      type: String,
-      default: 'success',
-    },
-    size: {
-      type: String,
-      default: 'md',
-    },
+<script setup>
+defineProps({
+  color: {
+    type: String,
+    default: 'success',
   },
-  methods: {
-    getClasses: (color, size) => {
-      let colorValue, sizeValue
-
-      colorValue = color ? `pagination-${color}` : null
-      sizeValue = size ? `pagination-${size}` : null
-
-      return `${colorValue} ${sizeValue}`
-    },
+  size: {
+    type: String,
+    default: 'md',
   },
+})
+
+function getClasses(color, size) {
+  const colorValue = color ? `pagination-${color}` : null
+  const sizeValue = size ? `pagination-${size}` : null
+
+  return `${colorValue} ${sizeValue}`
 }
 </script>

@@ -8,40 +8,34 @@
   </li>
 </template>
 
-<script>
-export default {
-  name: 'MaterialPaginationItem',
-  props: {
-    label: {
-      type: String,
-      default: '',
-    },
-    active: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    prev: {
-      type: Boolean,
-      default: false,
-    },
-    next: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+defineProps({
+  label: {
+    type: String,
+    default: '',
   },
-  methods: {
-    getClasses: (active, disabled) => {
-      let activeValue, disabledValue
-
-      activeValue = active ? 'active' : null
-      disabledValue = disabled ? 'disabled' : null
-
-      return `${activeValue} ${disabledValue}`
-    },
+  active: {
+    type: Boolean,
+    default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  prev: {
+    type: Boolean,
+    default: false,
+  },
+  next: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+function getClasses(active, disabled) {
+  const activeValue = active ? 'active' : null
+  const disabledValue = disabled ? 'disabled' : null
+
+  return `${activeValue} ${disabledValue}`
 }
 </script>

@@ -19,34 +19,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MaterialAlert',
-  props: {
-    color: {
-      type: String,
-      default: 'success',
-    },
-    icon: {
-      type: String,
-      default: '',
-    },
-    dismissible: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+defineProps({
+  color: {
+    type: String,
+    default: 'success',
   },
-  methods: {
-    getClasses: (color, dismissible) => {
-      let colorValue, dismissibleValue
-
-      colorValue = color ? `alert-${color}` : null
-
-      dismissibleValue = dismissible ? 'alert-dismissible fade show' : null
-
-      return `${colorValue} ${dismissibleValue}`
-    },
-    getIcon: (icon) => (icon ? icon : null),
+  icon: {
+    type: String,
+    default: '',
   },
+  dismissible: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+function getClasses(color, dismissible) {
+  const colorValue = color ? `alert-${color}` : null
+  const dismissibleValue = dismissible ? 'alert-dismissible fade show' : null
+  return `${colorValue} ${dismissibleValue}`
+}
+
+const getIcon = (icon) => {
+  return icon ? icon : null
 }
 </script>

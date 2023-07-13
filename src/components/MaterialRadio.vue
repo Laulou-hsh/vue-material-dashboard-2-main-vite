@@ -7,22 +7,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MaterialRadio',
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    id: {
-      type: String,
-      required: true,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    required: true,
   },
-}
+  id: {
+    type: String,
+    required: true,
+  },
+  checked: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>

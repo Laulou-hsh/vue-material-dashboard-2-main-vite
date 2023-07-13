@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: 'MaterialSnackbar',
   props: {
@@ -39,7 +39,6 @@ export default {
       type: String,
       default: 'success',
     },
-
     closeHandler: {
       type: Function,
       default: () => {},
@@ -61,5 +60,51 @@ export default {
     getTextColor: (color) => (color === 'white' ? 'text-dark' : 'text-white'),
     getHrColor: (color) => (color === 'white' ? 'dark' : 'light'),
   },
+}
+</script> -->
+
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
+  },
+  icon: {
+    type: Object,
+    component: String,
+    color: String,
+    default: () => {},
+  },
+  color: {
+    type: String,
+    default: 'success',
+  },
+  closeHandler: {
+    type: Function,
+    default: () => {},
+  },
+})
+
+function getColor(color) {
+  const colorValue = color === 'white' ? 'bg-white' : `bg-gradient-${color}`
+  return colorValue
+}
+
+const getIcon = (iconColor) => {
+  iconColor ? `text-${iconColor}` : null
+}
+const getTextColor = (color) => {
+  color === 'white' ? 'text-dark' : 'text-white'
+}
+const getHrColor = (color) => {
+  color === 'white' ? 'dark' : 'light'
 }
 </script>

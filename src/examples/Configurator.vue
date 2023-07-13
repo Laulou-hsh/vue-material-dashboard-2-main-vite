@@ -2,6 +2,7 @@
   <div class="fixed-plugin">
     <a class="px-3 py-2 fixed-plugin-button text-dark position-fixed" @click="props.toggle">
       <i class="material-icons py-2">settings</i>
+      <!-- <i class="material-icons py-2">vertical_align_top</i> -->
     </a>
     <div class="shadow-lg card">
       <div class="pt-3 pb-0 bg-transparent card-header">
@@ -149,6 +150,6 @@ onBeforeMount(() => {
   border: 1px solid transparent !important;
 }
 .fixed-plugin-button {
-  bottom: 40px !important;
+  bottom: 220px !important;
 }
 </style>

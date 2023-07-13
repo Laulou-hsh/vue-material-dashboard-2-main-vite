@@ -7,26 +7,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MaterialSwitch',
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    id: {
-      type: String,
-      required: true,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
-    labelClass: {
-      type: String,
-      default: '',
-    },
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    required: true,
   },
-}
+  id: {
+    type: String,
+    required: true,
+  },
+  checked: {
+    type: Boolean,
+    default: false,
+  },
+  labelClass: {
+    type: String,
+    default: '',
+  },
+})
 </script>
