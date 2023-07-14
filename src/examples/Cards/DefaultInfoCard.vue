@@ -19,35 +19,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'DefaultInfoCard',
-  props: {
-    icon: {
-      type: [String, Object],
-      required: true,
-      component: {
-        type: String,
-      },
-      background: {
-        type: String,
-      },
-      default: () => ({
-        background: 'bg-white',
-      }),
-    },
-    title: {
+<script setup>
+defineProps({
+  icon: {
+    type: [String, Object],
+    required: true,
+    component: {
       type: String,
-      required: true,
     },
-    description: {
+    background: {
       type: String,
-      default: '',
     },
-    value: {
-      type: [String, Number],
-      default: '',
-    },
+    default: () => ({
+      background: 'bg-white',
+    }),
   },
-}
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    default: '',
+  },
+  value: {
+    type: [String, Number],
+    default: '',
+  },
+})
 </script>

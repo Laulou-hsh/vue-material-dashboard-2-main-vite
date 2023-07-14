@@ -18,27 +18,23 @@
   </li>
 </template>
 
-<script>
-export default {
-  name: 'SidenavCollapseItem',
-  props: {
-    refer: {
-      type: String,
-      required: true,
-    },
-    miniIcon: {
-      type: String,
-      required: true,
-    },
-    text: {
-      type: String,
-      required: true,
-    },
+<script setup>
+import {ref} from 'vue'
+
+let isExpanded = ref(false)
+
+defineProps({
+  refer: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      isExpanded: false,
-    }
+  miniIcon: {
+    type: String,
+    required: true,
   },
-}
+  text: {
+    type: String,
+    required: true,
+  },
+})
 </script>

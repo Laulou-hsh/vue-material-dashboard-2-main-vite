@@ -7,10 +7,10 @@
     :class="isAbsolute ? 'mt-4' : 'mt-0'"
   >
     <div class="px-3 py-1 container-fluid">
-      <breadcrumbs :currentPage="currentRouteName" :color="color" />
+      <Breadcrumbs :currentPage="currentRouteName" :color="color" />
       <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" id="navbar">
         <div class="pe-md-3 d-flex align-items-center ms-md-auto">
-          <material-input id="search" label="Search here" />
+          <MaterialInput id="search" label="Search here" />
         </div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
@@ -142,40 +142,29 @@
     </div>
   </nav>
 </template>
-<script>
+
+<script setup>
+import {onBeforeMount, ref, computed} from 'vue'
+import {useRoute} from 'vue-router'
 import MaterialInput from '@/components/MaterialInput.vue'
 import Breadcrumbs from '../Breadcrumbs.vue'
-import {mapActions, mapState} from 'pinia'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'navbar',
-  data() {
-    return {
-      showMenu: false,
-    }
-  },
-  props: ['minNav', 'color'],
-  created() {
-    this.minNav
-  },
-  methods: {
-    ...mapActions(indexStore, ['navbarMinimize', 'toggleConfigurator']),
+const props = defineProps(['minNav', 'color'])
+const store = indexStore()
+const route = useRoute()
+let isAbsolute = ref(null)
+let showMenu = ref(null)
 
-    toggleSidebar() {
-      this.navbarMinimize()
-    },
-  },
-  components: {
-    Breadcrumbs,
-    MaterialInput,
-  },
-  computed: {
-    ...mapState(indexStore, ['isAbsolute']),
+onBeforeMount(() => {
+  props.minNav
+})
 
-    currentRouteName() {
-      return this.$route.name
-    },
-  },
+function toggleSidebar() {
+  store.navbarMinimize()
 }
+
+const currentRouteName = computed(() => {
+  return route.name
+})
 </script>

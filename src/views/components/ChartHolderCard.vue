@@ -18,26 +18,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ChartHolderCard',
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    subtitle: {
-      type: String,
-      default: '',
-    },
-    update: {
-      type: String,
-      default: '',
-    },
-    color: {
-      type: String,
-      default: 'primary',
-    },
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-}
+  subtitle: {
+    type: String,
+    default: '',
+  },
+  update: {
+    type: String,
+    default: '',
+  },
+  color: {
+    type: String,
+    default: 'primary',
+  },
+})
 </script>

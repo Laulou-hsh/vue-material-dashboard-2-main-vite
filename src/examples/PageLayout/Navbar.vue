@@ -69,32 +69,21 @@
   <!-- End Navbar -->
 </template>
 
-<script>
-import downArrWhite from '@/assets/img/down-arrow-white.svg'
-import downArrBlack from '@/assets/img/down-arrow-dark.svg'
+<script setup>
+import {computed} from 'vue'
 
-export default {
-  name: 'navbar',
-  data() {
-    return {
-      downArrWhite,
-      downArrBlack,
-    }
+const props = defineProps({
+  btnBackground: String,
+  isBlur: String,
+  darkMode: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    btnBackground: String,
-    isBlur: String,
-    darkMode: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
-    darkModes() {
-      return {
-        'text-dark': this.darkMode,
-      }
-    },
-  },
-}
+})
+
+computed(() => {
+  return {
+    'text-dark': props.darkMode,
+  }
+})
 </script>

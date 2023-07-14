@@ -48,40 +48,37 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProfileInfoCard',
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    info: {
-      type: Object,
-      fullName: String,
-      mobile: String,
-      email: String,
-      location: String,
-      default: () => {},
-    },
-    social: {
-      type: Array,
-      link: String,
-      icon: String,
-      default: () => [],
-    },
-    action: {
-      type: Object,
-      route: String,
-      tooltip: String,
-      default: () => ({
-        route: 'javascript:;',
-      }),
-    },
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-}
+  description: {
+    type: String,
+    default: '',
+  },
+  info: {
+    type: Object,
+    fullName: String,
+    mobile: String,
+    email: String,
+    location: String,
+    default: () => {},
+  },
+  social: {
+    type: Array,
+    link: String,
+    icon: String,
+    default: () => [],
+  },
+  action: {
+    type: Object,
+    route: String,
+    tooltip: String,
+    default: () => ({
+      route: 'javascript:;',
+    }),
+  },
+})
 </script>

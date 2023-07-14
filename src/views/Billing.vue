@@ -52,12 +52,12 @@
 </template>
 
 <script>
-import NavPill from './components/NavPill.vue'
+import NavPill from './components/NavPill/NavPill.vue'
 import MasterCard from '@/examples/Cards/MasterCard.vue'
 import DefaultInfoCard from '@/examples/Cards/DefaultInfoCard.vue'
-import PaymentCard from './components/PaymentCard.vue'
-import InvoiceCard from './components/InvoiceCard.vue'
-import BillingCard from './components/BillingCard.vue'
+import PaymentCard from './components/PaymentCard/PaymentCard.vue'
+import InvoiceCard from './components/InvoiceCard/InvoiceCard.vue'
+import BillingCard from './components/BillingCard/BillingCard.vue'
 import TransactionCard from './components/TransactionCard.vue'
 
 export default {

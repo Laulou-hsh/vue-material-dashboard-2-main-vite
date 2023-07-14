@@ -16,32 +16,30 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: 'TimelineItem',
-  props: {
-    color: {
-      type: String,
-      default: '',
-    },
-    icon: {
-      type: Object,
-      component: String,
-      class: String,
-      default: () => {},
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    dateTime: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
+
+<script setup>
+defineProps({
+  color: {
+    type: String,
+    default: '',
   },
-}
+  icon: {
+    type: Object,
+    component: String,
+    class: String,
+    default: () => {},
+  },
+  title: {
+    type: String,
+    default: '',
+  },
+  dateTime: {
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
+  },
+})
 </script>

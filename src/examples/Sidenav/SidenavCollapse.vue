@@ -18,39 +18,38 @@
     <slot name="list"></slot>
   </div>
 </template>
-<script>
-import {mapState} from 'pinia'
+
+<script setup>
+import {ref, computed} from 'vue'
+import {useRoute} from 'vue-router'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'SidenavCollapse',
-  props: {
-    collapseRef: {
-      type: String,
-      required: true,
-    },
-    navText: {
-      type: String,
-      required: true,
-    },
-    collapse: {
-      type: Boolean,
-      default: true,
-    },
+const route = useRoute()
+const store = indexStore()
+
+let isExpanded = ref(false)
+
+defineProps({
+  collapseRef: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      isExpanded: false,
-    }
+  navText: {
+    type: String,
+    required: true,
   },
-  methods: {
-    getRoute() {
-      const routeArr = this.$route.path.split('/')
-      return routeArr[1]
-    },
+  collapse: {
+    type: Boolean,
+    default: true,
   },
-  computed: {
-    ...mapState(indexStore, ['color']),
-  },
+})
+
+function getRoute() {
+  const routeArr = route.path.split('/')
+  return routeArr[1]
 }
+
+const color = computed(() => {
+  return store.color
+})
 </script>

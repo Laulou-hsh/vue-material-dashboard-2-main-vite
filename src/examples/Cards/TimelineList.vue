@@ -13,22 +13,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'TimelineList',
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    darkMode: {
-      type: Boolean,
-      default: false,
-    },
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-}
+  description: {
+    type: String,
+    default: '',
+  },
+  darkMode: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>

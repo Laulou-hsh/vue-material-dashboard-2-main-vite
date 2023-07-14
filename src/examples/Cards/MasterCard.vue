@@ -14,7 +14,7 @@
         </h5>
         <div class="d-flex">
           <div class="d-flex">
-            <div class="'me-4">
+            <div class="me-4">
               <p class="text-white text-sm opacity-8 mb-0">
                 {{ card.holderText }}
               </p>
@@ -36,38 +36,27 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import MaterialAvatar from '@/components/MaterialAvatar.vue'
 import img1 from '../../assets/img/logos/mastercard.png'
 
-export default {
-  name: 'MasterCard',
-  components: {
-    MaterialAvatar,
+defineProps({
+  card: {
+    type: Object,
+    number: String,
+    holderName: String,
+    expiryDate: String,
+    holderText: String,
+    expiryText: String,
+    background: String,
+    default: () => ({
+      number: '4562   1122   4594   7852',
+      holderName: 'Jack Peterson',
+      expiryDate: '11/22',
+      holderText: 'Card Holder',
+      expiryText: 'Expires',
+      background: 'dark',
+    }),
   },
-  props: {
-    card: {
-      type: Object,
-      number: String,
-      holderName: String,
-      expiryDate: String,
-      holderText: String,
-      expiryText: String,
-      background: String,
-      default: () => ({
-        number: '4562   1122   4594   7852',
-        holderName: 'Jack Peterson',
-        expiryDate: '11/22',
-        holderText: 'Card Holder',
-        expiryText: 'Expires',
-        background: 'dark',
-      }),
-    },
-  },
-  data() {
-    return {
-      img1,
-    }
-  },
-}
+})
 </script>

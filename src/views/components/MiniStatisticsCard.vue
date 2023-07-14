@@ -5,7 +5,6 @@
         class="icon icon-lg icon-shape shadow text-center border-radius-xl mt-n4 position-absolute"
         :class="`bg-gradient-${icon.background} shadow-${icon.background}`"
       >
-        <!-- <i class="material-icons opacity-10" :class="icon.color" aria-hidden="true">{{ icon.name }}</i> -->
         <i class="material-icons opacity-10" aria-hidden="true">{{ icon.name }}</i>
       </div>
       <div class="pt-1 text-end">
@@ -21,40 +20,34 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'MiniStatisticsCard',
-  data() {
-    return {
-      reverseDirection: 'flex-row-reverse justify-content-between',
-    }
+<script setup>
+const reverseDirection = 'flex-row-reverse justify-content-between'
+
+defineProps({
+  title: {
+    type: Object,
+    required: true,
+    text: String,
+    value: [Number, String],
   },
-  props: {
-    title: {
-      type: Object,
-      required: true,
-      text: String,
-      value: [Number, String],
-    },
-    detail: {
-      type: String,
-      default: '',
-    },
-    icon: {
-      type: Object,
-      required: true,
-      name: String,
-      color: String,
-      background: String,
-      default: () => ({
-        color: 'text-white',
-        background: 'success',
-      }),
-    },
-    directionReverse: {
-      type: Boolean,
-      default: false,
-    },
+  detail: {
+    type: String,
+    default: '',
   },
-}
+  icon: {
+    type: Object,
+    required: true,
+    name: String,
+    color: String,
+    background: String,
+    default: () => ({
+      color: 'text-white',
+      background: 'success',
+    }),
+  },
+  directionReverse: {
+    type: Boolean,
+    default: false,
+  },
+})
 </script>

@@ -68,25 +68,11 @@
     </ul>
   </div>
 </template>
-<script>
-import SidenavCollapse from './SidenavCollapse.vue'
-import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'SidenavList',
-  props: {
-    cardBg: String,
-  },
-  data() {
-    return {
-      title: 'Soft UI Dashboard PRO',
-      controls: 'dashboardsExamples',
-      isActive: 'active',
-      indexStore,
-    }
-  },
-  components: {
-    SidenavCollapse,
-  },
-}
+<script setup>
+import SidenavCollapse from './SidenavCollapse.vue'
+
+defineProps({
+  cardBg: String,
+})
 </script>

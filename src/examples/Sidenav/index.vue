@@ -20,7 +20,7 @@
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2" />
-    <SidenavList />
+    <sidenav-list />
   </aside>
 </template>
 <script>

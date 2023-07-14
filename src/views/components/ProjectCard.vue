@@ -99,35 +99,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'projectCard',
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    description: {
-      type: String,
-      default: '',
-    },
-    headers: {
-      type: Array,
-      required: true,
-    },
-    projects: {
-      type: Array,
-      required: true,
-      logo: String,
-      title: String,
-      members: Array,
-      budget: String,
-      progress: {
-        type: Object,
-        percentage: Number,
-        color: String,
-      },
+<script setup>
+defineProps({
+  title: {
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
+  },
+  headers: {
+    type: Array,
+    required: true,
+  },
+  projects: {
+    type: Array,
+    required: true,
+    logo: String,
+    title: String,
+    members: Array,
+    budget: String,
+    progress: {
+      type: Object,
+      percentage: Number,
+      color: String,
     },
   },
-}
+})
 </script>
