@@ -1,5 +1,4 @@
 <template>
-  <!-- Navbar -->
   <nav
     class="top-0 navbar navbar-expand-lg position-absolute z-index-3"
     :class="isBlur ? isBlur : 'shadow-none my-2 navbar-transparent w-100'"
@@ -66,7 +65,6 @@
       </div>
     </div>
   </nav>
-  <!-- End Navbar -->
 </template>
 
 <script setup>

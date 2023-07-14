@@ -90,10 +90,12 @@
 
 <script setup>
 import {computed, ref, onBeforeMount} from 'vue'
+import {useRoute} from 'vue-router'
 import {indexStore} from '@/store/index.js'
 import {activateDarkMode, deactivateDarkMode} from '@/assets/js/dark-mode'
 
 const props = defineProps(['toggle'])
+const route = useRoute()
 const store = indexStore()
 
 function sidebarColor(color = 'success') {
@@ -109,11 +111,11 @@ function sidebar(type) {
   store.sidebarType = type
 }
 
-// function setNavbarFixed() {
-//   if (this.$route.name !== 'Profile') {
-//     store.isNavFixed = !indexStore.isNavFixed
-//   }
-// }
+function setNavbarFixed() {
+  if (route.name !== 'Profile') {
+    store.isNavFixed = !store.isNavFixed
+  }
+}
 
 function darkMode() {
   if (store.isDarkMode) {
@@ -140,6 +142,7 @@ const sidebarType = computed(() => {
 })
 
 onBeforeMount(() => {
+  setNavbarFixed()
   window.addEventListener('resize', sidenavTypeOnResize)
   window.addEventListener('load', sidenavTypeOnResize)
 })

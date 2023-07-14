@@ -74,33 +74,24 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import {onBeforeMount, onBeforeUnmount} from 'vue'
 import Navbar from '@/examples/PageLayout/Navbar.vue'
 import MaterialInput from '@/components/MaterialInput.vue'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-import {mapActions} from 'pinia'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'sign-in',
-  components: {
-    Navbar,
-    MaterialInput,
-    MaterialSwitch,
-    MaterialButton,
-  },
-  beforeMount() {
-    this.toggleEveryDisplay()
-    this.toggleHideConfig()
-  },
-  beforeUnmount() {
-    this.toggleEveryDisplay()
-    this.toggleHideConfig()
-  },
-  methods: {
-    // ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
-    ...mapActions(indexStore, ['toggleEveryDisplay', 'toggleHideConfig']),
-  },
-}
+const store = indexStore()
+const {toggleEveryDisplay, toggleHideConfig} = store
+
+onBeforeMount(() => {
+  toggleEveryDisplay()
+  toggleHideConfig()
+})
+
+onBeforeUnmount(() => {
+  toggleEveryDisplay()
+  toggleHideConfig()
+})
 </script>

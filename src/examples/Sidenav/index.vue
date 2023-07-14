@@ -23,26 +23,14 @@
     <sidenav-list />
   </aside>
 </template>
-<script>
+
+<script setup>
 import SidenavList from './SidenavList.vue'
 import logo from '@/assets/img/logo-ct.png'
 import logoDark from '@/assets/img/logo-ct-dark.png'
-import {mapState} from 'pinia'
+import {storeToRefs} from 'pinia'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'index',
-  components: {
-    SidenavList,
-  },
-  data() {
-    return {
-      logo,
-      logoDark,
-    }
-  },
-  computed: {
-    ...mapState(indexStore, ['sidebarType', 'isDarkMode']),
-  },
-}
+const store = indexStore()
+const {sidebarType, isDarkMode} = storeToRefs(store)
 </script>

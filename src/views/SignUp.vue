@@ -74,35 +74,26 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import {onBeforeMount, onBeforeUnmount} from 'vue'
 import Navbar from '@/examples/PageLayout/Navbar.vue'
 import MaterialInput from '@/components/MaterialInput.vue'
 import MaterialCheckbox from '@/components/MaterialCheckbox.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-const body = document.getElementsByTagName('body')[0]
-import {mapActions} from 'pinia'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'sign-up',
-  components: {
-    Navbar,
-    MaterialInput,
-    MaterialCheckbox,
-    MaterialButton,
-  },
-  beforeMount() {
-    this.toggleEveryDisplay()
-    this.toggleHideConfig()
-    body.classList.remove('bg-gray-100')
-  },
-  beforeUnmount() {
-    this.toggleEveryDisplay()
-    this.toggleHideConfig()
-    body.classList.add('bg-gray-100')
-  },
-  methods: {
-    ...mapActions(indexStore, ['toggleEveryDisplay', 'toggleHideConfig']),
-  },
-}
+const body = document.getElementsByTagName('body')[0]
+const store = indexStore()
+const {toggleEveryDisplay, toggleHideConfig} = store
+
+onBeforeMount(() => {
+  toggleEveryDisplay()
+  toggleHideConfig()
+  body.classList.remove('bg-gray-100')
+})
+onBeforeUnmount(() => {
+  toggleEveryDisplay()
+  toggleHideConfig()
+  body.classList.add('bg-gray-100')
+})
 </script>

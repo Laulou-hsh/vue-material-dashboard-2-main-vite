@@ -13,45 +13,37 @@
     <configurator :toggle="toggleConfigurator" :class="[showConfig ? 'show' : '', hideConfigButton ? 'd-none' : '']" />
   </main>
 </template>
-<script>
+
+<script setup>
+import {onBeforeMount} from 'vue'
+import {storeToRefs} from 'pinia'
 import Sidenav from './examples/Sidenav/index.vue'
 import Configurator from '@/examples/Configurator.vue'
 import Navbar from '@/examples/Navbars/Navbar.vue'
 import AppFooter from '@/examples/Footer.vue'
-import {mapActions, mapState} from 'pinia'
 import {indexStore} from '@/store/index.js'
 
-export default {
-  name: 'App',
-  components: {
-    Sidenav,
-    Configurator,
-    Navbar,
-    AppFooter,
-  },
-  methods: {
-    ...mapActions(indexStore, ['toggleConfigurator', 'navbarMinimize']),
-  },
-  computed: {
-    ...mapState(indexStore, [
-      'color',
-      'isAbsolute',
-      'isNavFixed',
-      'navbarFixed',
-      'absolute',
-      'showSidenav',
-      'showNavbar',
-      'showFooter',
-      'showConfig',
-      'hideConfigButton',
-    ]),
-  },
-  beforeMount() {
-    const sidenav = document.getElementsByClassName('g-sidenav-show')[0]
+const store = indexStore()
+const {
+  color,
+  isAbsolute,
+  isNavFixed,
+  navbarFixed,
+  absolute,
+  showSidenav,
+  showNavbar,
+  showFooter,
+  showConfig,
+  hideConfigButton,
+} = storeToRefs(store)
 
-    if (window.innerWidth > 1200) {
-      sidenav.classList.add('g-sidenav-pinned')
-    }
-  },
-}
+const {navbarMinimize, toggleConfigurator} = store
+
+onBeforeMount(() => {
+  const sidenav = document.getElementsByClassName('g-sidenav-show')[0]
+
+  if (window.innerWidth > 1200) {
+    sidenav.classList.add('g-sidenav-pinned')
+  }
+})
 </script>

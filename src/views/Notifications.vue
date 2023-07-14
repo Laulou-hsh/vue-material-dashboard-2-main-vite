@@ -158,25 +158,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import {ref} from 'vue'
 import MaterialAlert from '@/components/MaterialAlert.vue'
 import MaterialSnackbar from '@/components/MaterialSnackbar.vue'
 
-export default {
-  name: 'Notifications',
-  components: {
-    MaterialAlert,
-    MaterialSnackbar,
-  },
-  data() {
-    return {
-      snackbar: null,
-    }
-  },
-  methods: {
-    closeSnackbar() {
-      this.snackbar = null
-    },
-  },
+let snackbar = ref(null)
+
+function closeSnackbar() {
+  snackbar.value = null
 }
 </script>

@@ -446,7 +446,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import {onMounted, onBeforeUnmount} from 'vue'
+import {indexStore} from '@/store/index.js'
 import ProfileInfoCard from './components/ProfileInfoCard.vue'
 import DefaultProjectCard from './components/DefaultProjectCard.vue'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
@@ -467,42 +469,19 @@ import team4 from '@/assets/img/team-4.jpg'
 import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
 
-import {indexStore} from '@/store/index.js'
+defineProps({
+  showMenu: Boolean,
+})
 
-export default {
-  name: 'profile-overview',
-  data() {
-    return {
-      showMenu: false,
-      sophie,
-      marie,
-      ivana,
-      peterson,
-      nick,
-      img1,
-      team1,
-      team2,
-      team3,
-      team4,
-      img2,
-      img3,
-      indexStore,
-    }
-  },
-  components: {
-    ProfileInfoCard,
-    DefaultProjectCard,
-    MaterialSwitch,
-    MaterialAvatar,
-  },
+const store = indexStore()
 
-  mounted() {
-    indexStore.isAbsolute = true
-    setNavPills()
-    setTooltip()
-  },
-  beforeUnmount() {
-    indexStore.isAbsolute = false
-  },
-}
+onMounted(() => {
+  store.isAbsolute = true
+  setNavPills()
+  setTooltip()
+})
+
+onBeforeUnmount(() => {
+  store.isAbsolute = false
+})
 </script>

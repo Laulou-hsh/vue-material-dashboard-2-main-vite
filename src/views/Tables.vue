@@ -550,9 +550,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'tables',
-}
-</script>

@@ -7,10 +7,10 @@
     :class="isAbsolute ? 'mt-4' : 'mt-0'"
   >
     <div class="px-3 py-1 container-fluid">
-      <Breadcrumbs :currentPage="currentRouteName" :color="color" />
+      <breadcrumbs :currentPage="currentRouteName" :color="color" />
       <div class="mt-2 collapse navbar-collapse mt-sm-0 me-md-0 me-sm-4" id="navbar">
         <div class="pe-md-3 d-flex align-items-center ms-md-auto">
-          <MaterialInput id="search" label="Search here" />
+          <material-input id="search" label="Search here" />
         </div>
         <ul class="navbar-nav justify-content-end">
           <li class="nav-item d-flex align-items-center">
@@ -146,14 +146,17 @@
 <script setup>
 import {onBeforeMount, ref, computed} from 'vue'
 import {useRoute} from 'vue-router'
+import {storeToRefs} from 'pinia'
 import MaterialInput from '@/components/MaterialInput.vue'
 import Breadcrumbs from '../Breadcrumbs.vue'
 import {indexStore} from '@/store/index.js'
 
 const props = defineProps(['minNav', 'color'])
 const store = indexStore()
+const {isAbsolute} = storeToRefs(store)
+const {toggleConfigurator, navbarMinimize} = store
+
 const route = useRoute()
-let isAbsolute = ref(null)
 let showMenu = ref(null)
 
 onBeforeMount(() => {
@@ -161,7 +164,7 @@ onBeforeMount(() => {
 })
 
 function toggleSidebar() {
-  store.navbarMinimize()
+  navbarMinimize()
 }
 
 const currentRouteName = computed(() => {
