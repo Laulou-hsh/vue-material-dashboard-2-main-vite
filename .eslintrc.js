@@ -5,8 +5,8 @@ module.exports = {
     es6: true,
   },
   parserOptions: {
-    ecmaVersion: 2023, // Allows for the parsing of mode`rn ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 2023,
+    sourceType: 'module',
   },
   plugins: ['vue'],
   extends: [
