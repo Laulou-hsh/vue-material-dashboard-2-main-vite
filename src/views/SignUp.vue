@@ -80,10 +80,10 @@ import Navbar from '@/examples/PageLayout/Navbar.vue'
 import MaterialInput from '@/components/MaterialInput.vue'
 import MaterialCheckbox from '@/components/MaterialCheckbox.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 
 const body = document.getElementsByTagName('body')[0]
-const store = indexStore()
+const store = useAppStore()
 const {toggleEveryDisplay, toggleHideConfig} = store
 
 onBeforeMount(() => {
@@ -91,6 +91,7 @@ onBeforeMount(() => {
   toggleHideConfig()
   body.classList.remove('bg-gray-100')
 })
+
 onBeforeUnmount(() => {
   toggleEveryDisplay()
   toggleHideConfig()

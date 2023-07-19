@@ -80,9 +80,9 @@ import Navbar from '@/examples/PageLayout/Navbar.vue'
 import MaterialInput from '@/components/MaterialInput.vue'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
 import MaterialButton from '@/components/MaterialButton.vue'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 
-const store = indexStore()
+const store = useAppStore()
 const {toggleEveryDisplay, toggleHideConfig} = store
 
 onBeforeMount(() => {

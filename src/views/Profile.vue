@@ -448,7 +448,7 @@
 
 <script setup>
 import {onMounted, onBeforeUnmount} from 'vue'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 import ProfileInfoCard from './components/ProfileInfoCard.vue'
 import DefaultProjectCard from './components/DefaultProjectCard.vue'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
@@ -473,7 +473,7 @@ defineProps({
   showMenu: Boolean,
 })
 
-const store = indexStore()
+const store = useAppStore()
 
 onMounted(() => {
   store.isAbsolute = true

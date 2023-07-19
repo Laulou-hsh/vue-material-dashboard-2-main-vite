@@ -22,10 +22,10 @@
 <script setup>
 import {ref, computed} from 'vue'
 import {useRoute} from 'vue-router'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 
 const route = useRoute()
-const store = indexStore()
+const store = useAppStore()
 
 let isExpanded = ref(false)
 

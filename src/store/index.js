@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia'
 
-export const indexStore = defineStore({
-  id: 'index',
+export const useAppStore = defineStore({
+  id: 'app',
   state: () => ({
     hideConfigButton: false,
     isPinned: true,
@@ -18,7 +18,6 @@ export const indexStore = defineStore({
     isDarkMode: false,
     navbarFixed: 'position-sticky blur shadow-blur left-auto top-1 z-index-sticky px-0 mx-4',
     absolute: 'position-absolute px-4 mx-0 w-100 z-index-2',
-    isTransparent: 'bg-transparent',
   }),
   actions: {
     toggleConfigurator() {
@@ -56,4 +55,4 @@ export const indexStore = defineStore({
   },
 })
 
-export default indexStore
+export default useAppStore

@@ -149,10 +149,10 @@ import {useRoute} from 'vue-router'
 import {storeToRefs} from 'pinia'
 import MaterialInput from '@/components/MaterialInput.vue'
 import Breadcrumbs from '../Breadcrumbs.vue'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 
 const props = defineProps(['minNav', 'color'])
-const store = indexStore()
+const store = useAppStore()
 const {isAbsolute} = storeToRefs(store)
 const {toggleConfigurator, navbarMinimize} = store
 

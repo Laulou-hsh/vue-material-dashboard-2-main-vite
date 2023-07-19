@@ -29,8 +29,8 @@ import SidenavList from './SidenavList.vue'
 import logo from '@/assets/img/logo-ct.png'
 import logoDark from '@/assets/img/logo-ct-dark.png'
 import {storeToRefs} from 'pinia'
-import {indexStore} from '@/store/index.js'
+import {useAppStore} from '@/store/index.js'
 
-const store = indexStore()
+const store = useAppStore()
 const {sidebarType, isDarkMode} = storeToRefs(store)
 </script>

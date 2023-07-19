@@ -91,20 +91,19 @@
 <script setup>
 import {computed, ref, onBeforeMount} from 'vue'
 import {useRoute} from 'vue-router'
-import {indexStore} from '@/store/index.js'
+import {storeToRefs} from 'pinia'
+import {useAppStore} from '@/store/index.js'
 import {activateDarkMode, deactivateDarkMode} from '@/assets/js/dark-mode'
 
 const props = defineProps(['toggle'])
 const route = useRoute()
-const store = indexStore()
+const store = useAppStore()
+let {isNavFixed} = storeToRefs(store)
+const {setColor} = store
 
 function sidebarColor(color = 'success') {
   document.querySelector('#sidenav-main').setAttribute('data-color', color)
   setColor(color)
-}
-
-function setColor(color) {
-  store.setColor(color)
 }
 
 function sidebar(type) {
@@ -113,7 +112,7 @@ function sidebar(type) {
 
 function setNavbarFixed() {
   if (route.name !== 'Profile') {
-    store.isNavFixed = !store.isNavFixed
+    isNavFixed = !isNavFixed
   }
 }
 
