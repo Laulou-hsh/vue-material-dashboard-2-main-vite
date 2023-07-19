@@ -12,23 +12,16 @@
     </div>
     <div class="card-body p-3 mb-0">
       <ul class="list-group">
-        <invoice-card-item
-          v-for="item in InvoiceData"
-          :key="item.id"
-          :date="item.date"
-          :id="item.id"
-          :amount="item.amount"
-        />
+        <invoice-card-item v-for="{id, date, amount} of InvoiceData" :key="id" :date="date" :id="id" :amount="amount" />
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
 import InvoiceCardItem from './InvoiceCardItem.vue'
 import {data} from './InvoiceData.json'
 import MaterialButton from '@/components/MaterialButton.vue'
 
-const InvoiceData = ref(data)
+const InvoiceData = data
 </script>

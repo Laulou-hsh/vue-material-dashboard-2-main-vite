@@ -1,0 +1,23 @@
+{
+  "data": {
+    "title": "Profile Information",
+    "description": "Hi, I'm Laulou, a normal developer.",
+    "info": {
+      "fullName": "Laulou",
+      "mobile": "1234567890",
+      "email": "xxx@xxx.com",
+      "location": "China"
+    },
+    "social": [
+      {
+        "link": "https://github.com/",
+        "icon": "fa-github"
+      }
+    ],
+    "action":
+    {
+      "route": "javascript:;",
+      "tooltip": "Edit Profile"
+    }
+  }
+}

@@ -16,10 +16,10 @@
     <div class="card-body p-3">
       <div class="row">
         <payment-card-item
-          v-for="(item, index) in paymentData"
-          :key="item.paymentCardNumber"
-          :src="item.img"
-          :paymentCardNumber="item.paymentCardNumber"
+          v-for="{paymentCardNumber, img, index} of paymentData"
+          :key="paymentCardNumber"
+          :src="img"
+          :paymentCardNumber="paymentCardNumber"
           :class="{'mb-md-0 mb-4': index === 0}"
         />
       </div>
@@ -28,9 +28,8 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
 import MaterialButton from '@/components/MaterialButton.vue'
 import PaymentCardItem from './PaymentCardItem.vue'
 import {data} from './PaymentData.json'
-const paymentData = ref(data)
+const paymentData = data
 </script>

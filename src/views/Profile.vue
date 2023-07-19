@@ -449,7 +449,7 @@
 <script setup>
 import {onMounted, onBeforeUnmount} from 'vue'
 import {useAppStore} from '@/store/index.js'
-import ProfileInfoCard from './components/ProfileInfoCard.vue'
+import ProfileInfoCard from './components/ProfileInfoCard/ProfileInfoCard.vue'
 import DefaultProjectCard from './components/DefaultProjectCard.vue'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
 import MaterialAvatar from '@/components/MaterialAvatar.vue'

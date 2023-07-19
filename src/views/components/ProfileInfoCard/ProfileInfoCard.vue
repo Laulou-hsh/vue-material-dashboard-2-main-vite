@@ -39,9 +39,9 @@
         </li>
         <li class="pb-0 border-0 list-group-item ps-0">
           <strong class="text-sm text-dark">Social:</strong> &nbsp;
-          <a v-for="({icon, link}, index) of social" :key="index" class="py-0 mb-0 btn-simple ps-1 pe-2" :href="link">
+          <!-- <a v-for="({icon, link}, index) of social" :key="index" class="py-0 mb-0 btn-simple ps-1 pe-2" :href="link">
             <i :class="`fa fa-brands ${icon}`"></i>
-          </a>
+          </a> -->
         </li>
       </ul>
     </div>

@@ -6,13 +6,13 @@
     <div class="card-body pt-4 p-3">
       <ul class="list-group">
         <billing-card-item
-          v-for="(item, index) in BillingData"
+          v-for="{name, companyName, emailAddres, VATNumber, index} of BillingData"
           :key="index"
           :isFirst="index === 0"
-          :name="item.name"
-          :companyName="item.companyName"
-          :emailAddress="item.emailAddres"
-          :VATNumber="item.VATNumber"
+          :name="name"
+          :companyName="companyName"
+          :emailAddress="emailAddres"
+          :VATNumber="VATNumber"
         />
       </ul>
     </div>
@@ -20,8 +20,7 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
 import BillingCardItem from './BillingCardItem.vue'
 import {data} from './BillingData.json'
-const BillingData = ref(data)
+const BillingData = data
 </script>

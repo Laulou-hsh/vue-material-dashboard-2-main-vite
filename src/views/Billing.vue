@@ -13,22 +13,14 @@
           </div>
           <div class="col-xl-6">
             <div class="row">
-              <div class="col-md-6">
-                <default-info-card
-                  icon="account_balance"
-                  title="Salary"
-                  description="Belong Interactive"
-                  value="+$2000"
-                />
-              </div>
-              <div class="col-md-6">
-                <default-info-card
-                  icon="account_balance_wallet"
-                  title="Paypal"
-                  description="Freelance Payment"
-                  value="$455.00"
-                />
-              </div>
+              <default-info-card
+                v-for="{icon, title, description, value} of DefaultInfoCardData"
+                :key="title"
+                :icon="icon"
+                :title="title"
+                :description="description"
+                :value="value"
+              />
             </div>
           </div>
           <div class="col-md-12 mb-4">
@@ -54,9 +46,12 @@
 <script setup>
 import NavPill from './components/NavPill/NavPill.vue'
 import MasterCard from '@/examples/Cards/MasterCard.vue'
-import DefaultInfoCard from '@/examples/Cards/DefaultInfoCard.vue'
+import DefaultInfoCard from './components/DefaultInfoCard/DefaultInfoCard.vue'
+import DefaultInfoData from './components/DefaultInfoCard/DefaultInfoCardData.json'
 import PaymentCard from './components/PaymentCard/PaymentCard.vue'
 import InvoiceCard from './components/InvoiceCard/InvoiceCard.vue'
 import BillingCard from './components/BillingCard/BillingCard.vue'
 import TransactionCard from './components/TransactionCard.vue'
+
+const DefaultInfoCardData = DefaultInfoData.data
 </script>

@@ -38,10 +38,10 @@ onMounted(() => {
   const label = props.chart.datasets.label
   const options = {
     grid: {
-      left: '10',
-      right: '30',
+      left: '8',
+      right: '8',
       bottom: '8%',
-      top: '10%',
+      top: '16%',
       containLabel: true,
     },
     tooltip: {
