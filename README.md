@@ -26,4 +26,4 @@ Using Vite to build is faster and more convenient, and using [Pinia](https://pin
 ## 待办事项 Todo List 
 
 - [x] 改Chart.js为echarts.js
-- [ ] 优化内部使用DOM的地方，改为使用Vue组件和数据驱动
+- [x] 优化内部使用DOM的地方，改为使用Vue组件和数据驱动
