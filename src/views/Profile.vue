@@ -12,13 +12,13 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            <img src="@/assets/img/bruce-mars.jpg" alt="profile_image" class="shadow-sm w-100 border-radius-lg" />
+            <img src="@/assets/img/Laulou.png" alt="profile_image" class="shadow-sm w-100 border-radius-lg" />
           </div>
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
-            <h5 class="mb-1">Richard Davis</h5>
-            <p class="mb-0 font-weight-normal text-sm">CEO / Co-Founder</p>
+            <h5 class="mb-1">Laulou</h5>
+            <p class="mb-0 font-weight-normal text-sm">Developer</p>
           </div>
         </div>
         <div class="mx-auto mt-3 col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0">
@@ -232,32 +232,11 @@
           </div>
           <div class="col-12 col-md-6 col-xl-4 mt-md-0 mt-4 position-relative">
             <profile-info-card
-              title="Profile Information"
-              description="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
-              :info="{
-                fullName: 'Alec M. Thompson',
-                mobile: '(44) 123 1234 123',
-                email: 'alecthompson@mail.com',
-                location: 'USA',
-              }"
-              :social="[
-                {
-                  link: 'https://www.facebook.com/CreativeTim/',
-                  icon: 'fa-facebook',
-                },
-                {
-                  link: 'https://twitter.com/creativetim',
-                  icon: 'fa-twitter',
-                },
-                {
-                  link: 'https://www.instagram.com/creativetimofficial/',
-                  icon: 'fa-instagram',
-                },
-              ]"
-              :action="{
-                route: 'javascript:;',
-                tooltip: 'Edit Profile',
-              }"
+              :title="ProfileInfoData.title"
+              :description="ProfileInfoData.description"
+              :info="ProfileInfoData.info"
+              :social="ProfileInfoData.social"
+              :action="ProfileInfoData.action"
             />
             <hr class="vertical dark" />
           </div>
@@ -268,46 +247,13 @@
               </div>
               <div class="p-3 card-body">
                 <ul class="list-group">
-                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
-                    <material-avatar class="me-3" :img="sophie" alt="kal" border-radius="lg" shadow="regular" />
-                    <div class="d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm">Sophie B.</h6>
-                      <p class="mb-0 text-xs">Hi! I need more information..</p>
-                    </div>
-                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
-                  </li>
-                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
-                    <material-avatar class="me-3" :img="marie" alt="kal" border-radius="lg" shadow="regular" />
-                    <div class="d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm">Anne Marie</h6>
-                      <p class="mb-0 text-xs">Awesome work, can you..</p>
-                    </div>
-                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
-                  </li>
-                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
-                    <material-avatar class="me-3" :img="ivana" alt="kal" border-radius="lg" shadow="regular" />
-                    <div class="d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm">Ivanna</h6>
-                      <p class="mb-0 text-xs">About files I can..</p>
-                    </div>
-                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
-                  </li>
-                  <li class="px-0 mb-2 border-0 list-group-item d-flex align-items-center">
-                    <material-avatar class="me-3" :img="peterson" alt="kal" border-radius="lg" shadow="regular" />
-                    <div class="d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm">Peterson</h6>
-                      <p class="mb-0 text-xs">Have a great afternoon..</p>
-                    </div>
-                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
-                  </li>
-                  <li class="px-0 border-0 list-group-item d-flex align-items-center">
-                    <material-avatar class="me-3" :img="nick" alt="kal" border-radius="lg" shadow="regular" />
-                    <div class="d-flex align-items-start flex-column justify-content-center">
-                      <h6 class="mb-0 text-sm">Nick Daniel</h6>
-                      <p class="mb-0 text-xs">Hi! I need more information..</p>
-                    </div>
-                    <a class="mb-0 btn btn-link pe-3 ps-0 ms-auto" href="javascript:;">Reply</a>
-                  </li>
+                  <conversations-card
+                    v-for="{avatar, name, info} of ConversationsData"
+                    :key="name"
+                    :avatar="avatar"
+                    :name="name"
+                    :info="info"
+                  />
                 </ul>
               </div>
             </div>
@@ -321,122 +267,14 @@
             </div>
             <div class="row">
               <default-project-card
-                title="Modern"
-                :image="img1"
-                label="Project #2"
-                description="As Uber works through a huge amount of internal
-                management turmoil."
-                :authors="[
-                  {
-                    image: team1,
-                    name: 'Elena Morison',
-                  },
-                  {
-                    image: team2,
-                    name: 'Ryan Milly',
-                  },
-                  {
-                    image: team3,
-                    name: 'Nick Daniel',
-                  },
-                  {
-                    image: team4,
-                    name: 'Peterson',
-                  },
-                ]"
-                :action="{
-                  color: 'success',
-                  label: 'View Project',
-                }"
-              />
-
-              <default-project-card
-                title="Scandinavian"
-                :image="img2"
-                label="Project #1"
-                description="Music is something that every person has his or her own
-                      specific opinion about."
-                :authors="[
-                  {
-                    image: team3,
-                    name: 'Nick Daniel',
-                  },
-                  {
-                    image: team4,
-                    name: 'Peterson',
-                  },
-                  {
-                    image: team1,
-                    name: 'Elena Morison',
-                  },
-                  {
-                    image: team2,
-                    name: 'Ryan Milly',
-                  },
-                ]"
-                :action="{
-                  color: 'success',
-                  label: 'View Project',
-                }"
-              />
-
-              <default-project-card
-                title="Minimalist"
-                :image="img3"
-                label="Project #3"
-                description="Different people have different taste, and various types
-                      of music."
-                :authors="[
-                  {
-                    image: team4,
-                    name: 'Peterson',
-                  },
-                  {
-                    image: team3,
-                    name: 'Nick Daniel',
-                  },
-                  {
-                    image: team1,
-                    name: 'Elena Morison',
-                  },
-                  {
-                    image: team2,
-                    name: 'Ryan Milly',
-                  },
-                ]"
-                :action="{
-                  color: 'success',
-                  label: 'View Project',
-                }"
-              />
-              <default-project-card
-                title="Gothic"
-                image="https://images.unsplash.com/photo-1606744824163-985d376605aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                label="Project #4"
-                description="Why would anyone pick blue over pink? Pink is obviously a
-                      better color."
-                :authors="[
-                  {
-                    image: team4,
-                    name: 'Peterson',
-                  },
-                  {
-                    image: team3,
-                    name: 'Nick Daniel',
-                  },
-                  {
-                    image: team2,
-                    name: 'Ryan Milly',
-                  },
-                  {
-                    image: team1,
-                    name: 'Elena Morison',
-                  },
-                ]"
-                :action="{
-                  color: 'success',
-                  label: 'View Project',
-                }"
+                v-for="{title, image, label, description, authors, action, index} of DefaultProjectData"
+                :key="index"
+                :title="title"
+                :image="image"
+                :label="label"
+                :description="description"
+                :authors="authors"
+                :action="action"
               />
             </div>
           </div>
@@ -450,21 +288,12 @@
 import {onMounted, onBeforeUnmount} from 'vue'
 import {useAppStore} from '@/store/index.js'
 import ProfileInfoCard from './components/ProfileInfoCard/ProfileInfoCard.vue'
-import DefaultProjectCard from './components/DefaultProjectCard.vue'
+import ProfileInfo from './components/ProfileInfoCard/ProfileInfo.json'
+import ConversationsCard from './components/ConversationsCard/ConversationsCard.vue'
+import Conversations from './components/ConversationsCard/ConversationsData.json'
+import DefaultProjectCard from './components/DefaultProjectCard/DefaultProjectCard.vue'
+import DefaultProject from './components/DefaultProjectCard/DefaultProjectData.json'
 import MaterialSwitch from '@/components/MaterialSwitch.vue'
-import MaterialAvatar from '@/components/MaterialAvatar.vue'
-import sophie from '@/assets/img/kal-visuals-square.jpg'
-import marie from '@/assets/img/marie.jpg'
-import ivana from '@/assets/img/ivana-square.jpg'
-import peterson from '@/assets/img/team-4.jpg'
-import nick from '@/assets/img/team-3.jpg'
-import img1 from '@/assets/img/home-decor-1.jpg'
-import img2 from '@/assets/img/home-decor-2.jpg'
-import img3 from '@/assets/img/home-decor-3.jpg'
-import team1 from '@/assets/img/team-1.jpg'
-import team2 from '@/assets/img/team-2.jpg'
-import team3 from '@/assets/img/team-3.jpg'
-import team4 from '@/assets/img/team-4.jpg'
 
 import setNavPills from '@/assets/js/nav-pills.js'
 import setTooltip from '@/assets/js/tooltip.js'
@@ -474,6 +303,9 @@ defineProps({
 })
 
 const store = useAppStore()
+const ProfileInfoData = ProfileInfo.data
+const ConversationsData = Conversations.data
+const DefaultProjectData = DefaultProject.data
 
 onMounted(() => {
   store.isAbsolute = true

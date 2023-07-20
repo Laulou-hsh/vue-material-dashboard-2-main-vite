@@ -51,7 +51,7 @@ import DefaultInfoData from './components/DefaultInfoCard/DefaultInfoCardData.js
 import PaymentCard from './components/PaymentCard/PaymentCard.vue'
 import InvoiceCard from './components/InvoiceCard/InvoiceCard.vue'
 import BillingCard from './components/BillingCard/BillingCard.vue'
-import TransactionCard from './components/TransactionCard.vue'
+import TransactionCard from './components/TransactionCard/TransactionCard.vue'
 
 const DefaultInfoCardData = DefaultInfoData.data
 </script>

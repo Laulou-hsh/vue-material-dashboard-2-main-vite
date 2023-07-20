@@ -14,20 +14,13 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
                 <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
-                <div class="row mt-3">
-                  <div class="col-2 text-center ms-auto">
-                    <a class="btn btn-link px-3" href="javascript:;">
-                      <i class="fab fa-facebook text-white text-lg"></i>
-                    </a>
-                  </div>
-                  <div class="col-2 text-center px-1">
-                    <a class="btn btn-link px-3" href="javascript:;">
+                <div class="row mt-3 d-flex justify-content-center align-items-center">
+                  <div class="col-4 text-center px-1">
+                    <a
+                      class="btn btn-link px-3"
+                      href="https://github.com/Laulou-hsh/vue-material-dashboard-2-main-vite"
+                    >
                       <i class="fab fa-github text-white text-lg"></i>
-                    </a>
-                  </div>
-                  <div class="col-2 text-center me-auto">
-                    <a class="btn btn-link px-3" href="javascript:;">
-                      <i class="fab fa-google text-white text-lg"></i>
                     </a>
                   </div>
                 </div>
@@ -64,7 +57,7 @@
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-12 col-md-6 my-auto">
             <div class="copyright text-center text-sm text-white text-lg-start">
-              © {{ new Date().getFullYear() }}, made with <i class="fa fa-heart" aria-hidden="true"></i> by
+              © {{ new Date().getFullYear() }}, modified with <i class="fa fa-heart" aria-hidden="true"></i> by
               <a href="https://github.com/Laulou-hsh" class="font-weight-bold text-white" target="_blank">Laulou</a>
             </div>
           </div>
